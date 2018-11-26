@@ -1,0 +1,15 @@
+package br.com.findlancer.tests;
+ 
+import br.com.findlancer.model.Freelancer;
+import br.com.findlancer.sql.FreelancerDAO; 
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	  
+	 FreelancerDAO f1 = new FreelancerDAO();
+	 Freelancer freelancer = f1.buscaPorId(35);
+	 System.out.println(freelancer.getNome());
+	 System.out.println(freelancer.getEndereco().getNomeRua());
+ }
+}

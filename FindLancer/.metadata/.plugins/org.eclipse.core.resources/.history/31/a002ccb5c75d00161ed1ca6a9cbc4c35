@@ -1,0 +1,12 @@
+package br.com.findlancer.tests;
+
+import br.com.findlancer.sql.LoginDAO;
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	 
+	 LoginDAO login = new LoginDAO();
+	 System.out.println(login.logar("leonidas@gmail.com ","12345"));
+ }
+}

@@ -1,0 +1,147 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@page import="br.com.findlancer.model.Freelancer"%>  
+<%@ include file="topo.jsp" %>
+    
+    
+    	 <% 
+                  	 /*Instanciando novo objeto freelancer e armazenando 
+                  	 o perfil enviado peloe controller*/	 
+                 	 Freelancer freelancer = (Freelancer)session.getAttribute("perfilFreelancer");
+                  
+                     //Variaveis para receber os dados
+                  	 String nome = freelancer.getNome();
+                     String formacao = freelancer.getFormacao();
+                     String experiencia = freelancer.getExperiencia();
+                     String descricao = freelancer.getDescricao();
+                     String cidade = freelancer.getEndereco().getCidade().getNomeCidade();
+                     String estado = freelancer.getEndereco().getCidade().getEstado().getSiglaEstado();
+                     String rua = freelancer.getEndereco().getNomeRua();
+                     String bairro = freelancer.getEndereco().getBairro();
+                     int numero = freelancer.getEndereco().getNumero();
+                     int cep = freelancer.getEndereco().getCep();
+                     int idade = freelancer.getIdade();
+                     String email = freelancer.getEmail(); 
+                     String telefone = freelancer.getTelefone();
+                     String subcategoria = freelancer.getSubcategoria().getDescricao();
+                     String categoria = freelancer.getSubcategoria().getCategoria().getDescricao();
+                     
+                  %>
+    
+           <div id="conteudo" class="conteudocadfreela">
+             <div class="divback">
+                 
+                
+                 <div id="msgalerta"><p id="alerta"></p><a id="btok">OK</a></div>
+                 
+                 <form id="form-cad" class="form-inline" role="form" action=" " method="post">
+                 <h1 id="titulo-cad">Edite seu perfil</h1>     
+                        <div class="form-group"> 
+                          	<label>Nome</label><br/>
+                          	<input value="<%=nome %>" type="text" name="nomeFreela" id="campoNome" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                        	<label>Telefone:</label><br/>
+                         	<input type="text" value="<%= telefone%>" name="telefoneFreela" id="fone"  class="form-control">
+                         </div>
+                         <br/>
+                         
+                         <div class="form-group">
+                            <label>E-mail:</label><br/>
+                            <input type="text" value="<%= email %>" name="emailFreela" id="email"  class="form-control">
+                         </div>
+                         
+                          
+                         <div class="form-group"> 
+                            <label>Data de nascimento:</label><br/>
+                            <input type="text" value="11/06/2016" name="nascimento" id="datepicker"  class="form-control" readonly>
+                         </div>
+                        
+                         
+                         <div class="form-group"> 
+                         	<label id="hbairro">Bairro:</label><br/>
+                         	<input type="text" name="nbairro"  class="form-control" id="bairro">
+                         </div>
+                         
+                         <div class="form-group">                        
+	                         <label id="hendereco">CEP:</label><br/>
+	                         <input type="text" name="ncep"  class="form-control" id="cep"> 
+	                     </div>   
+	                     
+	                        
+	                     <div class="form-group">
+	                          <label id="hendereco">Rua:</label><br/>
+	                          <input type="text" name="nrua"  class="form-control" id="rua">     
+	                     </div>  
+	                       
+	                     <div class="form-group">
+	                          <label id="hendereco">Número:</label><br/>
+	                          <input type="number" name="nnumero"  class="form-control" id="numerorua">     
+	                     </div>   
+	                      
+	                      <div class="form-group">     
+	                         <label>Estado</label><br/>
+	                         <select  class="form-control" name="nestado" id="estado">
+	                    		<option value="">Selecione seu estado</option>
+	                         </select>
+	                      </div>
+	                      
+	                        <div class="form-group">     
+	                         <label>Cidade</label><br/>
+	                         <select  class="form-control" name="ncidade" id="cidades">
+	                    		<option value="">Selecione sua cidade</option>
+	                         </select>
+	                      </div>
+	                      
+	                      <div class="form-group">     
+	                         <label>Categorias de trabalho</label><br/>
+	                         <select  class="form-control" name="ncategoria" id="cat">
+	                    		<option value="">Selecione uma categoria</option>
+	                         </select>
+	                      </div>
+	                     
+	                       
+	                      <div class="form-group">   
+	                          <label>Subcategoria de trabalho</label><br/>
+	                          <select  class="form-control" name="nsubcategoria" id="subcat">
+	                			<option value="" >Selecione uma subcategoria</option>
+	                         </select>
+	                      </div>    
+	                      <br/>	
+	                    
+	                      <div class="form-group">
+	                        <label>Senha</label><br/>
+	                        <input type="password" name="senhaFreela"  class="form-control" id="senha"> 
+	                      </div>	
+	                    
+	                    <div class="form-group">	
+	                        <label>Repita sua senha</label><br/>
+	                        <input class="form-control" type="password"  id="senha2">
+	                    </div>
+	                    <br/>
+	                      
+						<div class="form-group">
+	                        <label>Descreva seu trabalho.</label><br/>
+	                        <textarea  class="form-control" name="descricaoFreela" placeholder="Exemplo: Programador - PHP,JAVA e etc."></textarea>
+	                    </div>
+	                    <br/>
+	                    
+	                    <div class="form-group">
+	                        <label>Formação</label><br/>
+	                        <textarea   class="form-control" name="formacaoFreela" placeholder="Exemplo: Cursando Superior, Ensino Médio etc."></textarea>
+	                    </div>
+	                    <br/>
+	                         
+	                    <div class="form-group">     
+	                        <label>Exp. profissional</label><br/>
+	                        <textarea  class="form-control" name="experienciaFreela" placeholder="Exemplo: Vendedor de carros, Programador Java etc."></textarea>
+	                   	</div>  
+	                   	 <br/>   
+	                   	<div id="divBotao"> 
+                        	<input  type="submit" value="Salvar" class="btsalvar">
+                        </div>
+                 </form>
+             </div>     
+          </div>
+
+<%@ include file="rodape.jsp" %>

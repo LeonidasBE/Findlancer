@@ -1,0 +1,229 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+    
+          <div id="conteudo" class="conteudocadfreela">
+             <div class="divback">
+                 <h1>Cadastro Freelancer</h1>
+                 <div id="msgalerta"><p id="alerta"></p><a id="btok">OK</a></div>
+                 
+                 <form id="cadfreela" action="freelacontroller.do?acao=cadastrarfreela" method="post">
+                     
+                     <div id="pt1">
+                         <h2 id="hnome">Nome Completo</h2>
+                          <input type="text" name="nomeFreela" class="campoNome">
+
+                         
+                         <h2 id="hfone">Telefone:</h2>
+                         <input type="text" name="telefoneFreela" class="fone">
+                         
+                         <h2>Data de nascimento:</h2>
+                         <input type="text" name="nascimento" id="datepicker" readonly>
+                         
+                         <h2>Categorias de trabalho</h2>
+                         
+                         <select class="categoria" name="categoriaFreela">
+                    
+                            <option value="">Selecione uma categoria</option>
+                            <option value="WEB">Desenvolvimento web e mobile</option>
+                            <option value="Design 	Multimedia">Design e Multimedia</option>
+                            <option value="Informatica Telecomunicacoes">Informática e Telecomunicações</option>
+                            <option value="Redator Traducao">Redator e Tradução</option>
+                            <option value="MarketingVendas">Marketing e Vendas</option>
+                            <option value="EngenhariaArquitetura">Engenharia e Arquitetura</option>
+                            <option value="Servicosempresariais">Serviços empresariais</option>
+                            <option value="SuporteAdministrativo">Suporte Administrativo</option>
+                            <option value="AdvocaciaLeis">Advocacia e Leis</option>
+                            <option value="Teleinformacao">Teleinformação</option>
+                            <option value="Coaching">Coaching</option>
+                            <option value="Outros">Outros</option>
+                         </select>
+                    
+                         
+                        <h2>Repita sua senha</h2>
+                        <input type="password" class="senha2">
+                         
+                        <h2>Descreva seu trabalho.</h2>
+                        <textarea name="descricaoFreela" placeholder="Exemplo: Programador - PHP,JAVA e etc."></textarea>
+                          
+                        <h2>Formação</h2>
+                        <textarea name="formacaoFreela" placeholder="Exemplo: Cursando Superior, Ensino Médio etc."></textarea>
+                         
+                        <h2>Exp. profissional</h2>
+                        <textarea name="experienciaFreela" placeholder="Exemplo: Vendedor de carros, Programador Java etc."></textarea>
+                         
+                        <input type="submit" value="Salvar" class="btsalvar">
+                    </div>
+
+                     <div id="pt2">
+                         <h2>Cidade:</h2>
+                         <input type="text" class="cidade" name="cidadeFreela">
+                         
+                         <h2>E-mail:</h2>
+                         <input type="text" name="emailFreela" class="email">
+                            
+                         <h2>Subcategoria</h2>
+                         <select class="subcategoria" name="subcategoriaFreela">
+                
+                            <!--Subcategoria DESENVOLVIMENTO WEB E MOBILE-->
+
+                            <option value="">Selecione uma Subcategoria</option>
+                            <option value="AplicativosMobiles">Aplicativos mobiles</option>
+                            <option value="ECommerce">E-Commerce</option>
+                            <option value="ProgramacaoWeb">Programação Web</option>
+                            <option value="TestePerguntasRespostas">Teste e Perguntas / Respostas</option>
+                            <option value="UXExperienciaUsuario">UX - Experiência do Usuário</option>
+                            <option value="DesenhoWeb">Desenho Web</option>
+                            <option value="ArquiteturaWeb">Arquitetura Web</option>
+                            <option value="UIDesignInterface">UI - Design de interface</option>
+                            <option value="GerenciamentoProjetosTI">Gerenciamento de Projetos TI</option>
+                            <option value="OutrosWebMobile">Outros Web e Mobile</option>
+                            <option value="Diagramacao Web">Diagramação Web</option>
+
+                            <!--Subcategoria DESIGN E MULTIMEDIA-->
+                            <option value="Animacoes">Animações</option>
+                            <option value="Banners">Banners</option>
+                            <option value="Caricaturas">Caricaturas</option>
+                            <option value="DesignModa">Design de Moda</option>
+                            <option value="DesignGrafico">Design Gráfico</option>
+                            <option value="AudioEdicaoProducao">Audio - Edição e Produção</option>
+                            <option value="VideoEdicaoProducao">Vídeo - Edição e Produção</option>
+                            <option value="EmailsNewsletters">E-mails e Newsletters</option>
+                            <option value="RotulosEmbalagens">Rótulos e Embalagens</option>
+                            <option value="Papelaria">Papelaria</option>
+                            <option value="Fotografia">Fotografia</option>
+                            <option value="ImagemCorporativa">Imagem Corporativa</option>
+                            <option value="Logotipos">Logotipos</option>
+                            <option value="Apresentacoes">Apresentações</option>
+                            <option value="Locucao">Locução</option>
+                            <option value="OutrosDesignMultimedia">Outros Design e Multimedia</option>
+                            <option value="Design3D">Design 3D</option>
+                            <option value="Ilustracao">Ilustração</option>
+                            <option value="DiagramacaoArtigos">Diagramação de artigos</option>
+
+                            <!--Subcategoria INFORMÁTICA E TELECOMUNICAÇÕES-->
+                            <option value="AdministracaoSistemas">Administração de Sistemas</option>
+                            <option value="ArquiteturaDados">Arquitetura de Dados</option>
+                            <option value="BaseDados">Base de dados</option>
+                            <option value="DesenvolvedorSoftware">Desenvolvedor de Software</option>
+                            <option value="GerenciamentoProjetosTI">Gerenciamento de Projetos TI</option>
+                            <option value="Redes">Redes</option>
+                            <option value="Servidores">Servidores</option>
+                            <option value="SuporteTecnico">Suporte Técnico</option>
+                            <option value="DesenvolvimentoJogos">Desenvolvimento de Jogos</option>
+                            <option value="OutrosTI">Outros TI</option>
+
+                            <!--Subcategoria REDATOR E TRADUÇÃO-->
+                            <option value="ProducaoConteudo">Produção de conteúdo</option>
+                            <option value="RedacaoTextos">Redação de Textos</option>
+                            <option value="RedacaoTecnica">Redação Técnica</option>
+                            <option value="Jornalismo">Jornalismo</option>
+                            <option value="RedacaoArtigosBlogs">Redação para artigos e blogs</option>
+                            <option value="traducaoTextos">tradução de textos</option>
+                            <option value="OutrosRedacaoTraducao">Outros Redação e Tradução</option>
+
+                            <!--Subcategoria MARKETING E VENDAS-->
+                            <option value="RepresentanteComercial">Representante Comercial</option>
+                            <option value="ComunicacaoCorporativa">Comunicação Corporativa</option>
+                            <option value="ConsultorMarketing">Consultor em Marketing</option>
+                            <option value="ConsultorVendas">Consultor de vendas</option>
+                            <option value="DesenvolvedorMarcasProdutos">Desenvolvedor de Marcas e Produtos</option>
+                            <option value="EmailMarketing">E-mail Marketing</option>
+                            <option value="InvestigacaoMercados">Investigação de Mercados</option>
+                            <option value="Publicidade">Publicidade</option>
+                            <option value="RelacoesPublicasEventos">Relações Públicas e Eventos</option>
+                            <option value="SEMMarketingBuscadores">SEM - Marketing em Buscadores</option>
+                            <option value="SEOPosicionamentoWeb">SEO - Posicionamento Web</option>
+                            <option value="SocialMedia">Social Media</option>
+                            <option value="Telemarketing">Telemarketing</option>
+                            <option value="OutrosMarketingVendas">Outros Marketing e Vendas</option>
+                            <option value="CommunityManager">Community Manager</option>
+
+                            <!--Subcategoria ENGENHARIA E ARQUITETURA-->
+                            <option value="Arquitetura">Arquitetura</option>
+                            <option value="CADAutoCAD">CAD & AutoCAD</option>
+                            <option value="CircuitosIntegrados">Circuitos Integrados</option>
+                            <option value="GestaoGerenciamentoObras">Gestão e Gerenciamento de Obras</option>
+                            <option value="DesignIndustrial">Design Industrial</option>
+                            <option value="EngenhariaCivil">Engenharia Civil</option>
+                            <option value="EngenhariaEletronica">Engenharia Eletrônica</option>
+                            <option value="EngenhariaMecanica">Engenharia Mecânica</option>
+                            <option value="DesignInteriores">Design de Interiores</option>
+                            <option value="OutrosEngenhariaArquitetura">Outros Engenharia e Arquitetura</option>
+
+                            <!--Subcategoria SERVIÇOS EMPRESARIAIS-->
+                            <option value="AnaliseEstatistica">Análise Estatística</option>
+                            <option value="ConsultoriaEstrategica">Consultoria Estratégica</option>
+                            <option value="Contabilidade">Contabilidade</option>
+                            <option value="ControleQualidade">Controle de Qualidade</option>
+                            <option value="Educacao">Educação</option>
+                            <option value="GestaoOperacoes">Gestão de Operações</option>
+                            <option value="GestaoProjetos">Gestão de Projetos</option>
+                            <option value="GestaoImpostos">Gestão de Impostos</option>
+                            <option value="GestaoLogistica">Gestão de Logística</option>
+                            <option value="GestaoProcessos">Gestão de Processos</option>
+                            <option value="PlanejamentoNegocios">Planejamento de Negócios</option>
+                            <option value="PlanejamentoFinanceiro">Planejamento Financeiro</option>
+                            <option value="ProcessamentoPagamentos">Processamento de pagamentos</option>
+                            <option value="RecursosHumanos">Recursos Humanos</option>
+                            <option value="ServicosJuridicos">Serviços Jurídicos</option>
+                            <option value="OutrosServicosEmpresariais">Outros Serviços Empresariais</option>
+
+                            <!--Subcategoria SUPORTE ADMINISTRATIVO-->
+                            <option value="AssistenteVirtual">Assistente Virtual</option>
+                            <option value="SuporteCliente">Suporte ao Cliente</option>
+                            <option value="SuporteTelefonico">Suporte Telefônico</option>
+                            <option value="DataEntry">Data Entry</option>
+                            <option value="GestaoEventos">Gestão de Eventos</option>
+                            <option value="GravacaoDados">Gravação de Dados</option>
+                            <option value="ListaEmails">Lista de e-mails</option>
+                            <option value="Mailing">Mailing</option>
+                            <option value="ElaboracaoRelatorios">Elaboração de relatórios</option>
+                            <option value="RedacaoTextos">Redação de textos</option>
+                            <option value="Transcricao">Transcrição</option>
+                            <option value="OutrosSuporteAdministrativo">Outros Suporte Administrativo</option>
+
+                            <!--Subcategoria ADVOCACIA E LEIS-->
+                            <option value="DireitoEmpresarialLitigioComercial">Direito Empresarial e Litígio Comercial</option>
+                            <option value="DireitoPenal">Direito Penal</option>
+                            <option value="LitigiosCiveis">Litígios Cíveis</option>
+                            <option value="RelacoesDomesticas">Relações Domésticas</option>
+                            <option value="PlanejamentoPatrimonial">Planejamento patrimonial</option>
+                            <option value="Imigracao">Imigração</option>
+                            <option value="LeisPropriedadeIntelectual">Leis de propriedade intelectual</option>
+                            <option value="DanosPessoais">Danos Pessoais</option>
+                            <option value="Imoveis">Imóveis</option>
+                            <option value="Tributacao">Tributação</option>
+                            <option value="DireitoAmbiental">Direito Ambiental</option>
+
+                            <!--Subcategoria TELEINFORMAÇÃO-->
+                            <option value="AulasIdiomas">Aulas de idiomas</option>
+                            <option value="AulasInformatica">Aulas de informática</option>
+                            <option value="AulasAdministracao">Aulas de administração</option>
+                            <option value="CoachingEmpresarial">Coaching Empresarial</option>
+
+                            <!--Subcategoria COACHING-->
+                            <option value="CoachingPessoal">Coaching Pessoal (life coaching)</option>
+                            <option value="CoachingExecutivo">Coaching Executivo</option>
+                            <option value="CoachingCarreiras">Coaching de carreiras</option>
+                            <option value="CoachingEsportivo">Coaching Esportivo</option>
+                            <option value="CoachingSaude">Coaching de Saúde</option>
+                            <option value="Autocoaching">Autocoaching</option>
+                            <option value="CoachingOrganizacional">Coaching organizacional</option>
+
+                            <!--Subcategoria OUTROS-->
+
+                        </select>
+                             
+                        <h2>Senha</h2>
+                        <input type="password" name="senhaFreela"  class="senha"> 
+                        
+                        <h2>Insira uma foto sua</h2>
+                        <input type="file">  
+                     
+                     </div>
+                     
+                 </form>
+             </div>     
+          </div>       
+
+<%@ include file="rodape.jsp" %>

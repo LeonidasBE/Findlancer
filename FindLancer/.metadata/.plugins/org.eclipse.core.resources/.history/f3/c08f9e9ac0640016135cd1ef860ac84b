@@ -1,0 +1,97 @@
+ 	package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;  
+import br.com.findlancer.model.Freelancer;
+  
+
+public class FreelancerDAO {
+    
+	Connection conexaoDBUsuario = Conexao.conectar();
+	
+	public void Cadastrar(Freelancer freelancer){
+			try {
+				String sql = "insert into freelancers(nome,descricaoTrabalho,email,experiencia, "
+						+ "formacao,nascimento,senha,fk_subcategoria,telefone,fk_endereco) "
+						+ "values(?,?,?,?,?,?,?,?,?,?)";
+				
+				
+				PreparedStatement statement = conexaoDBUsuario.prepareStatement(sql);
+				statement.setString(1, freelancer.getNome());
+				statement.setString(2, freelancer.getDescricao());
+				statement.setString(3, freelancer.getEmail());
+				statement.setString(4, freelancer.getExperiencia());
+				statement.setString(5, freelancer.getFormacao()); 
+				statement.setString(6, freelancer.getNascimento());
+				statement.setString(7, freelancer.getSenha());
+				statement.setInt(8, freelancer.getFksubcategoria()); 
+				statement.setString(9, freelancer.getTelefone());
+				statement.setInt(10, freelancer.getFkEndereco());
+				
+				statement.execute();
+				statement.close();
+				
+				System.out.println("Cadastrado com sucesso");
+			} catch (SQLException e) {
+				System.out.println("Erro ao tentar cadastrar usuario");
+		}
+	}
+	
+	public Freelancer buscaPorId(int id){
+		
+		//Objeto freelancer que será retornado 
+		Freelancer freelancer = null;
+		
+		//String com o comando para a query
+		String sql = "select f.nome,f.telefone,f.email,f.descricaoTrabalho,f.formacao, "
+				+ "f.experiencia, f.fk_endereco,f.fk_subcategoria, "
+				+ "TIMESTAMPDIFF(YEAR, f.nascimento, NOW()),f.senha,f.nascimento from freelancers as f where idFreelancer = ?";
+				
+		try {
+			
+			//Preparar o statement
+			PreparedStatement statement = conexaoDBUsuario.prepareStatement(sql);
+			
+			//Atribuindo o parametro id para o parametro da query
+			statement.setInt(1, id);
+			
+			//Executando a query e armazenando resultado
+			ResultSet resultado = statement.executeQuery();
+			
+			//While para capturar os dados do resultset
+			while(resultado.next()){
+				freelancer = new Freelancer();
+				
+				freelancer.setNome(resultado.getString(1));
+				freelancer.setTelefone(resultado.getString(2));
+				freelancer.setEmail(resultado.getString(3));
+				freelancer.setDescricao(resultado.getString(4));
+				freelancer.setFormacao(resultado.getString(5));
+				freelancer.setExperiencia(resultado.getString(6)); 
+				freelancer.setFkEndereco(resultado.getInt(7));
+				freelancer.setFksubcategoria(resultado.getInt(8));
+				freelancer.setIdade(resultado.getInt(9));
+				freelancer.setSenha(resultado.getString(10));
+				freelancer.setNascimento(resultado.getString(11));
+				System.out.println(resultado.getString(11));
+			}	
+				//Instanciando novo ojbeto de enderecoDao
+				EnderecoDAO enderecoDao = new EnderecoDAO();
+				freelancer.setEndereco(enderecoDao.buscarPorId(freelancer.getFkEndereco()));
+			
+				//Instanciando novo ojbeto de subcategoriaDao e executando a busca
+				SubcategoriaDAO subcategoriaDAO = new SubcategoriaDAO();
+				freelancer.setSubcategoria(subcategoriaDAO.buscaPorId(freelancer.getFksubcategoria()));
+				
+
+				
+			System.out.println("Busca de perfil freelancer ok");
+		} catch (SQLException e) {
+			System.out.println("Busca de perfil freelancer erro");
+		}
+		
+		return freelancer;
+	}
+}

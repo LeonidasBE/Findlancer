@@ -1,0 +1,29 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class CidadesDAO {
+
+	Connection conexaoDB = Conexao.conectar();
+	
+	public void popularCidades(){
+		//String para a query
+		String sql="select idCidade,nomeCidade from cidades";
+		
+		//Try para tentar executar a query
+		try {
+			//Preparar a query
+			PreparedStatement stmt = conexaoDB.prepareStatement(sql);
+			
+			//executar a query e armazenar em um ResultSet
+			ResultSet resultado = stmt.executeQuery();
+			
+			System.out.println("Sucesso ao tentar selecionar subcategorias");
+		} catch (SQLException e) {
+			System.out.println("Erro ao tentar selecionar subcategorias");
+		}
+	}
+	
+}

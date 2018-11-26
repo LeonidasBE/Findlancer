@@ -1,0 +1,141 @@
+#rodape{
+    width:100%;
+    background-color: #262626;
+    overflow: hidden;
+    box-shadow: 0px 0px 5px #000;
+}
+
+#rodape > #social{
+    width: 300px; 
+    margin: 10px auto; 
+}
+
+.icone{
+   width: 32px;
+   height: 32px; 
+   cursor: pointer;    
+   float:left;    
+   margin-left: 25px;   
+}
+#rodape > #social > #icones { 
+    height:33px;
+    width:250px;  
+    margin: 0px auto;
+}
+
+#rodape > #social > #icones > #face {
+   background-image: url(../img/icons/face.png);
+   transition: 1s;       
+}
+
+#rodape > #social > #icones > #face:hover {
+   background-image: url(../img/icons/face2.png);   
+   transition: 1s;       
+}
+
+#rodape > #social > #icones > #twitter {
+   background-image: url(../img/icons/twitter.png);   
+   transition: 1s;       
+}
+
+#rodape > #social > #icones > #twitter:hover {
+   background-image: url(../img/icons/twitter2.png); 
+   transition: 1s;
+}
+
+#rodape > #social > #icones > #liked {
+   background-image: url(../img/icons/likedin.png);    
+   transition: 1s;    
+}
+
+#rodape > #social > #icones > #liked:hover {
+   background-image: url(../img/icons/likedin2.png);  
+   transition: 1s;    
+}
+
+#rodape > #social > #icones > #git {
+   background-image: url(../img/icons/git.png);  
+   transition: 1s;        
+}
+
+#rodape > #social > #icones > #git:hover {
+   background-image: url(../img/icons/git2.png);  
+   transition: 1s;        
+}
+
+.txtfooter{
+    color: gray;
+    margin-top:5px;
+    font-size: 15px;
+    margin-left: 5px; 
+}
+
+.titrodape{
+	color:gray;
+}
+
+.linksfooter{
+	text-decoration:none;
+	color:gray;
+    margin-top:10px;
+	font-size:15px;  
+	font-size:15px;  
+	cursor:pointer;
+	transition:1s;
+}
+
+.linksfooter:hover{
+	color:#c74735;
+	transition:1s;
+	text-decoration:none;
+}
+ 
+
+#rodape>#copyright {
+    color: gray;
+    clear: both; 
+    font-size: 15px; 
+    margin-top: 250px;
+    text-align: center;
+}
+
+#rodape > #colunas > #coluna1{     
+  margin-left: 10px;  
+  height: 140px;  
+  float:left;
+} 
+
+#rodape >#colunas > #coluna2{
+    float:left; 
+    margin-left:15px;
+}
+
+#rodape > #colunas > #coluna3{ 
+	float:right;  
+    margin-right:20px;
+}
+
+#rodape > #colunas > #coluna4{
+	float:right;
+        margin-right:20px;
+}
+
+#rodape > #colunas > #coluna2 > #txtend{
+    float:left;
+}
+
+#rodape > #colunas > #coluna2 > a > #maps{
+    width: 25px;
+    height: 25px; 
+    background-image: url(../img/icons/local.png);
+    float:left; 
+    transition: 1s;
+    margin-left: 5px;
+    cursor:pointer;
+}
+
+#rodape > #colunas > #coluna2 > a >#maps:hover{ 
+    background-image: url(../img/icons/local2.png); 
+    transition: 1s;
+}
+

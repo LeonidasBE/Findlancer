@@ -1,0 +1,47 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+		
+           <div id="conteudo" class="conteudoErroLogin">
+           <div class="divback">
+           <%	try{
+           			boolean loginErro = (Boolean)session.getAttribute("erro");
+           			if(loginErro){ %>
+           <h1>Login ou senha incorretos:</h1>
+           
+           <% 
+           			}
+           		}catch(Exception erro){	
+           %>
+           
+           	 <h1>Efetue login</h1>
+           
+           <% 
+           		}
+           %>	 
+             <form id="loginErro" action="logincontroller.do?acao=logar" method="post">
+                 <h2>Email:</h2>
+                 
+                 <input id="email" name="email" type="text" class="campos-LoginErro">
+                
+                 <h2>Senha:</h2>
+                 
+                 <input id="email" name="senha" type="password" class="campos-LoginErro">
+                 
+                 <input id="btLoginErro" type="submit" class="bt-LoginErro" value="Logar">
+                 
+                 <div id="esqueceuSenha-txt">Esqueceu sua senha?</div>
+             </form>
+             <div id="div-esqueceuSenha">
+                 <h2>Insira seu email para que possamos enviar sua senha:</h2>
+                 <form id="esqueceuSenha-Form">
+                 
+                 	 <input id="esqueceuSenha-campo" name="email" type="text" class="campos-LoginErro">
+                 	 
+                 	 <input id="btEsqueceuSenha" name="email" type="submit" class="bt-LoginErro" value="Enviar">
+                 	 
+                 </form> 
+          </div>    
+          </div>    
+          </div>    
+    
+<%@ include file="rodape.jsp" %>

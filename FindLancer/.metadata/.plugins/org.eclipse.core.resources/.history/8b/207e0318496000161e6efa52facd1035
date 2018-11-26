@@ -1,0 +1,22 @@
+package br.com.findlancer.entidades;
+
+public class Subcategorias {
+	private int idSub;
+	 
+	private String descricao;
+	
+public int getIdSub() {
+		return idSub;
+	}
+	public void setIdSub(int idSub) {
+		this.idSub = idSub;
+	}
+	 
+	 
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+}

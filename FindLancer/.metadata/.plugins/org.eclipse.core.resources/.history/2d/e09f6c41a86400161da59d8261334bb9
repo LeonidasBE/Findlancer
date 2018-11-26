@@ -1,0 +1,54 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+
+			<% 
+				//Capturando o objeto com o perfil na sessão e armazenando
+				Empresa empresa = (Empresa)session.getAttribute("perfilEmpresa")
+			%>
+	
+          <div id="conteudo" class="conteudoPerfil">
+              <div class="fotoPerfil"></div>  
+              <div id="fundoFoto">
+                    
+                  <div id="avaliarPerfil">
+                      <div id="imgAvaliar"></div>
+                  </div> 
+              </div>
+                  
+                  <div id="txtNome">
+                        <h1>ProWay</h1>
+                        <p>Blusmenau</p>
+                  </div>    
+                   
+                  <div id="divTextos">
+                          <span>FeedBack Geral: 5</span> 
+                          <span> E-mail: <%  %></span>  
+                           <span>Contato: <% %></span>
+                      
+                  </div>
+                
+                  <div id="textoDesc">
+                      <h2>Sobre  </h2>
+                      <p> </p>
+                  </div>
+                
+                  <div id="ramo" class="cardPerfil">
+                      <h2 class="titPerfil">Dados da empresa</h2>
+                          <h3>Endereço:</h3>
+                          <p> Rua:</p>
+                          <p> Bairro:</p>
+                          <h3>Ramo de atividade:</h3>
+                          <p> Desenvolvimento Mobile</p>
+                          <h3>Número de funcionários:</h3>
+                          <h3>Pessoa responsável para contato:</h3>
+                          <p></p>  
+                  </div>
+              
+                   <div id="vagasPerfilEmpresa" class="cardPerfil">
+                      <h2 class="titPerfil">Vagas desta empresa</h2>
+                       <h3>Há 2 <a href="resultados.jsp">vagas</a> desta empresa</h3>
+                  </div>
+                  
+              
+          </div>
+<%@ include file="rodape.jsp" %>

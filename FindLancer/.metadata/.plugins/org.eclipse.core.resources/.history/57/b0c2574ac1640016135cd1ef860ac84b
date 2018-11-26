@@ -1,0 +1,16 @@
+package br.com.findlancer.sql;
+
+import br.com.findlancer.model.Freelancer;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		 
+		
+			Freelancer free = new Freelancer();
+			System.out.println(free.converterData("2016-09-22"));
+		
+			
+	}
+
+}

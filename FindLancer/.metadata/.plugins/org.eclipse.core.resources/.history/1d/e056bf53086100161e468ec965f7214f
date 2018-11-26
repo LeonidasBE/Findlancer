@@ -1,0 +1,63 @@
+package br.com.findlancer.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import br.com.findlancer.model.Categorias;
+import br.com.findlancer.model.Estados;
+import br.com.findlancer.sql.CategoriasDAO;
+import br.com.findlancer.sql.EstadosDAO;
+
+/**
+ * Servlet implementation class EstadosController
+ */
+@WebServlet("/estadoscontroller.do")
+public class EstadosController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public EstadosController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//Lista para
+		ArrayList<Estados> lista = new ArrayList<Estados>();
+		
+		//Instancia objeto do tipo CategoriaDAO para realizar o select
+		EstadosDAO estadoDAO = new EstadosDAO();
+		
+		//Executa metodo popularCategoria e armazena numa list<Categorias>
+		lista=categoriadao.popularCategorias();
+		
+		Gson gson1 = new Gson();
+		String listaCat = gson1.toJson(lista);
+		
+		
+		PrintWriter out = response.getWriter();
+		out.println(listaCat);
+		
+	}
+
+}

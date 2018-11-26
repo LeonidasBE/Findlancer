@@ -1,0 +1,63 @@
+package br.com.findlancer.controller;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import br.com.findlancer.entidades.Categorias;
+import br.com.findlancer.sql.CategoriasDAO;
+
+/**
+ * Servlet implementation class CategoriasController
+ */
+@WebServlet("/categoriascontroller.do")
+public class CategoriasController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public CategoriasController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//Captura o tipo de acao enviado por url
+		String acao = request.getParameter("acao"); 
+		
+		//Verifica qual a acao deve ser executada
+		if(acao.equals("poptabela")){
+			//Lista para
+			ArrayList<String> lista = new ArrayList<String>();
+			
+			//Instancia objeto do tipo CategoriaDAO para realizar o select
+			CategoriasDAO categoriadao = new CategoriasDAO();
+			
+			//Executa metodo popularCategoria e armazena numa list<Categorias>
+			lista=categoriadao.popularCategorias();
+			
+			//Cria uma sessao para enviar atributos
+			HttpSession sessao = request.getSession();
+			
+			 
+			
+			RequestDispatcher forwardPage = request.getRequestDispatcher("cadfreela.jsp");
+			forwardPage.forward(request, response); 
+		}
+	}
+ 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+	}
+
+}

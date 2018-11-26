@@ -1,0 +1,9 @@
+package br.com.findlancer.sql;
+
+public class CidadesDAO {
+
+	Connection conexaoDB = Conexao.conectar();
+	
+	
+	
+}

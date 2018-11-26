@@ -1,0 +1,16 @@
+package br.com.findlancer.tests;
+
+import br.com.findlancer.entidades.Freelancers;
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	
+	 
+	 Freelancers  freelancer= new Freelancers();
+	 freelancer.setTelefone("(33)");
+	 System.out.println(freelancer.getTelefone());
+	 int numero=Integer.parseInt(freelancer.getTelefone());
+	 System.out.println(numero);
+ }
+}

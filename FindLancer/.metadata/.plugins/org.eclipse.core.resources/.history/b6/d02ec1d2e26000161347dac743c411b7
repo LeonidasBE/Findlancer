@@ -1,0 +1,12 @@
+package br.com.findlancer.tests;
+
+
+public class Main {
+	public static void main(String[] args) {
+		 
+		for(int ind=1;ind<=100;ind++){
+			System.out.print((ind % 3 == 0) ? ind : "");
+			 
+		}
+	}
+}

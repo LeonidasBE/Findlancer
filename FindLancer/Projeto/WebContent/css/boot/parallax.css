@@ -1,0 +1,52 @@
+* {margin:0; padding: 0;}
+html, body {height:100%;}
+ 
+/** formata elementos que tem backgrounds parallax **/
+.bgParallax {
+	font-family: 'Elsie', cursive;
+	color:#FFF;
+	margin: 0 auto;
+	width: 100%; 
+	position: relative;
+	min-height: 100%;
+	text-shadow:0 0 10px rgba(0,0,0,1);
+ 
+	background-position: 50% 0; 
+	background-attachment: fixed;
+}
+ 
+/* Define backgrounds dos divs */
+#quemsomos {
+    background: url(../img/sobre/1.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+#missao {
+	background: url(../img/sobre/2.jpg) no-repeat center center fixed;
+	-webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	-moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	-ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	-o-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+    background-size: cover;
+}
+#missao2 {
+	background: url(../img/sobre/3.jpg) no-repeat center center fixed;
+	-webkit-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	-moz-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	-ms-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	-o-box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+	box-shadow:-20px 0 20px 5px rgba(0,0,0,0.7);
+    background-size: cover;
+}
+ 
+/** Formata o article que vai o texto **/
+.bgParallax article {
+  width: 70%;
+  text-align: center;
+  margin:0 auto;
+  padding:20% 0 20%;
+}
+ 
+/** formata texto **/
+article h1 {font-size:40px;}
+article p {line-height: 30px; font-size:30px; margin-top:15px;}

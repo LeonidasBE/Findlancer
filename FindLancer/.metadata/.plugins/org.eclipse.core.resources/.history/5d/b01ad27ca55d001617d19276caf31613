@@ -1,0 +1,71 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+
+          <div id="conteudo" class="conteudocadempresa">
+             <div class="divback">
+                 <h1>Cadastre sua empresa</h1>
+                  <div id="msgalerta"><p id="alerta"></p><a id="btok">OK</a></div>
+                 <form id="cadempresa" action="empresacontroller.do?acao=cadastrarempresa" method="post">
+                    <div id="pt1">
+                         <h2>Razão Social:</h2> 
+                         <input name="razaoSocial"  type="text" class="razao">
+                         
+                         <h2>Ramo de atividade:</h2> 
+                         <input name="ramoAtividade" type="text" class="ramo">
+                         
+                         <h2>Endereço:</h2> 
+                         <input name="endereco" type="text" class="endereco" placeholder="Ex:Nome Rua,00">
+                         
+                         <h2>Bairro:</h2> 
+                         <input name="bairro" type="text">
+                         
+                         <h2>Telefone:</h2>
+                         <input name="telefoneEmpresa" type="text" class="fone">
+                         
+                         <h2>Nº de funcionários:</h2> 
+                         <input name="qtdfuncionarios" type="number" class="">    
+                         
+                        
+                         <h2>Repita sua senha:</h2>
+                         <input type="password" class="senha2">
+                        
+                         <h2>E-mail:</h2>
+                         <input name="email" type="text" class="email">
+                         
+                          
+                          <h2>Descreva a empresa.</h2>
+                          <textarea placeholder="Exemplo:Programador - PHP,JAVA e etc." class="descricao"></textarea>
+                         
+                         <input name="descricaoEmpresa" type="submit" value="Salvar" class="btsalvar">
+                        
+                     </div>
+                
+                    <div id="pt2">
+                          <h2>Nome Fantasia:</h2> 
+                          <input name="nome" type="text" class="campoNome">
+                          
+                          <h2>CNPJ:</h2>
+                          <input name="cnpj" type="text" class="cnpj">
+                          
+                          <h2>Cidade:</h2> 
+                          <input name="cidade" type="text" class="cidade">
+                        
+                          <h2>CEP:</h2> 
+                          <input name="cep" type="text" class="cep">
+                          
+                          <h2>Pessoa para contato:</h2>
+                          <input name="pessoaContato" type="text" class="contato">
+                          
+                          <h2>Senha:</h2>
+                          <input name="senhaEmpresa" type="password" class="senha">
+                         
+                         <h2>Insira uma foto sua</h2>
+                         <input name="fotoEmpresa" type="file">
+                         
+                          
+                    </div>   
+                 </form>    
+          </div> 
+    </div>
+    
+<%@ include file="rodape.jsp" %>

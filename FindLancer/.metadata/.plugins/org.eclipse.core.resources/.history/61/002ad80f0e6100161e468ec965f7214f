@@ -1,0 +1,21 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+
+public class CidadesDAO {
+
+	Connection conexaoDB = Conexao.conectar();
+	
+	public void popularCidades(){
+		//String para a query
+		String sql="select idCidade,nomeCidade from cidades";
+		
+		//Try para tentar executar a query
+		try {
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+		}
+	}
+	
+}

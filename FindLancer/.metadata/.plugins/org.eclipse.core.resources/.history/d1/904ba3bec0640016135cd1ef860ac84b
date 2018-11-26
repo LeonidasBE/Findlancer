@@ -1,0 +1,15 @@
+package br.com.findlancer.sql;
+
+import br.com.findlancer.model.Freelancer;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		 
+		
+			String data = "2016-10-11"; 
+			System.out.println(data.substring(0, 4));
+			
+	}
+
+}

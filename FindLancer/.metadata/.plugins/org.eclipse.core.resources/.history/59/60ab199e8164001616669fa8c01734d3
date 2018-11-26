@@ -1,0 +1,143 @@
+package br.com.findlancer.controller;
+
+import java.io.IOException; 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import br.com.findlancer.model.Endereco;
+import br.com.findlancer.model.Freelancer;
+import br.com.findlancer.sql.EnderecoDAO;
+import br.com.findlancer.sql.FreelancerDAO;
+
+/**
+ * Servlet implementation class FreelancerController
+ */
+@WebServlet("/freelacontroller.do")
+public class FreelancerController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+     
+    public FreelancerController() {
+        super();         
+    }
+ 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//Capturar a acao que será executada
+		String acaoGet = request.getParameter("acao");
+		
+		//Condicionar para ver se o usuario deseja visualizar o seu perfils
+		if(acaoGet.equals("myperfil")){
+			HttpSession sessao = request.getSession();
+			int idUsuario = (int)sessao.getAttribute("id");
+			
+			//Chamando o método que realiza a o carregamento dos dados
+			loadFreelancer(request, response,idUsuario,"myperfilFreela.jsp",idUsuario);
+				
+		//Condicional para ver se o usuario quer visualizar o perfil de outro usuario
+		}else if(acaoGet.equals("viewperfil")){
+			int idUsuario = Integer.parseInt(request.getParameter("id"));
+			loadFreelancer(request, response, idUsuario, "myperfilFreela.jsp",idUsuario);
+		}
+	
+	}
+ 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//Capturando a acao que deve ser realizada
+		String acaoPost = request.getParameter("acao");  
+		
+		//Condicional para ver se o usuario deseja cadastrar
+		if(acaoPost.equals("cadastrarfreela")){
+			  
+	   //Condicional para verificar se o usuario deseja alterar o cadastro		    
+	   }else if(acaoPost.equals("alterarFreela")){
+		
+       }
+ }
+
+	private void loadFreelancer(HttpServletRequest request, HttpServletResponse response,int idUsuario,String pagina,int idValidacao) throws ServletException, IOException{
+
+		//Cria nova sessao para capturar a sessao atuak
+		HttpSession sessao = request.getSession();
+		
+		
+		//Objeto novo da classe freelancerDAO para executar os metodos de sql
+		FreelancerDAO freelancerDao = new FreelancerDAO();
+		
+		//Instanciando objeto da classe Freelancer
+		Freelancer freelancer = new Freelancer();
+		
+		//Execucao do método buscar por id  e o armzenando seu retorno
+		freelancer=freelancerDao.buscaPorId(idUsuario);
+		
+		//Enviando a lista para a pagina
+		sessao.setAttribute("perfilFreelancer", freelancer);
+		
+		//Envia o id para verificar se o perfil é do usuário ou de outro perfil
+		sessao.setAttribute("idValida", idValidacao);
+		
+		//Redirecionando para a pagina de meu perfil
+		RequestDispatcher forwardPage = request.getRequestDispatcher(pagina);
+		forwardPage.forward(request, response); 
+	
+	}
+	
+	//Método para cadastrar freelancer
+	private void cadastrarFreelancer(HttpServletRequest request, HttpServletResponse response){
+		
+		//parameters para tabela de freelancer
+		String nascimento=request.getParameter("nascimento"); 
+		int subcategoria=Integer.parseInt(request.getParameter("nsubcategoria"));
+		String formacao=request.getParameter("formacaoFreela");
+		String experiencia=request.getParameter("experienciaFreela");
+		String nome=request.getParameter("nomeFreela");
+		String telefone=request.getParameter("telefoneFreela");
+		String email=request.getParameter("emailFreela");
+		String senha=request.getParameter("senhaFreela");
+		String descricao=request.getParameter("descricaoFreela");
+	    
+		//parameters para tabela de enderecos
+		int fkcidade=Integer.parseInt(request.getParameter("ncidade"));
+	    int numeroEnd=Integer.parseInt(request.getParameter("nnumero")); 
+	    String bairro=request.getParameter("nbairro"); 
+	    String cep=request.getParameter("ncep"); 
+	    String rua =request.getParameter("nrua"); 
+	    
+	    //Instanciando objeto da classe enderecos e atribuindo os valores
+	    Endereco endereco = new Endereco();
+	    endereco.setBairro(bairro);
+	    endereco.converterCep(cep);
+	    endereco.setFk_cidade(fkcidade);
+	    endereco.setNumero(numeroEnd);
+	    endereco.setNomeRua(rua);
+	    
+	    //Instanciando objeto da classes EnderecosDAO e executando o método de insert
+	    EnderecoDAO enderecoDAO = new EnderecoDAO();
+	    int fkEndereco=enderecoDAO.cadastrarEndereco(endereco);
+	    
+	    //Instanciando objeto da classe usuario e atribuindo os valores 
+	    Freelancer usuario1 = new Freelancer();
+	    usuario1.setNome(nome);
+	    usuario1.setSenha(senha); 
+	    usuario1.setDescricao(descricao);
+	    usuario1.setEmail(email);
+	    usuario1.setExperiencia(experiencia);
+	    usuario1.setFormacao(formacao);
+	    usuario1.setNascimento(nascimento);
+	    usuario1.setFksubcategoria(subcategoria);
+	    usuario1.setTelefone(telefone);
+	    usuario1.setFk_endereco(fkEndereco);
+	    
+	    //Instanciando usuarioDAO para executar o cadastro
+	    FreelancerDAO usuarioDAO = new FreelancerDAO();
+	    usuarioDAO.Cadastrar(usuario1); 
+	    
+	     LoginController.controlarLogin(request, response, email, senha);
+	    
+	}
+}

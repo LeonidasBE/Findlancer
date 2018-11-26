@@ -1,0 +1,26 @@
+package br.com.findlancer.model;
+
+public class Cidades {
+	private int idCidade;
+	private int fk_estado;
+	private int nomeCidade;
+	
+	public int getIdCidade() {
+		return idCidade;
+	}
+	public void setIdCidade(int idCidade) {
+		this.idCidade = idCidade;
+	}
+	public int getFk_estado() {
+		return fk_estado;
+	}
+	public void setFk_estado(int fk_estado) {
+		this.fk_estado = fk_estado;
+	}
+	public int getNomeCidade() {
+		return nomeCidade;
+	}
+	public void setNomeCidade(int nomeCidade) {
+		this.nomeCidade = nomeCidade;
+	}
+}

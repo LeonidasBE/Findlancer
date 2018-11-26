@@ -1,0 +1,24 @@
+package br.com.findlancer.tests;
+
+
+public class Main {
+	public static void main(String[] args) {
+		 
+		char opcao = 's';
+		
+		switch(opcao){
+			case 'S':
+				System.out.println("Solteiro");
+				break;
+			case 'C':
+				System.out.println("Casado");
+				break;
+			case 'V':
+				System.out.println("Viuvo");
+				break;
+			
+		}
+		
+	}
+	
+}

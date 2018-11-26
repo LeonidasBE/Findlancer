@@ -1,0 +1,82 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import br.com.findlancer.model.Empresa;
+
+public class EmpresaDAO {
+		
+	Connection conexaoDBUsuario = Conexao.conectar();
+	public void cadastrarEmpresa(Empresa empresa){
+		//String com o comando para insert no banco
+		String sql = "insert into empresas (nome,ramoAtividade,qtdfuncionarios,fk_endereco,telefone,pessoaContato, "
+				+ " descricao,email,senha) values (?,?,?,?,?,?,?,?,?) ";
+		//Tentar executar a insercao
+		try {
+			
+			//Preaparando o statement
+			PreparedStatement statement = conexaoDBUsuario.prepareStatement(sql);
+			statement.setString(1, empresa.getNome());
+			statement.setString(2, empresa.getRamoAtividade());
+			statement.setInt(3, empresa.getQtdfuncionarios());
+			statement.setInt(4, empresa.getFkEndereco());
+			statement.setString(5, empresa.getTelefone());
+			statement.setString(6, empresa.getPessoaContato());
+			statement.setString(7, empresa.getDescricao());
+			statement.setString(8, empresa.getEmail());
+			statement.setString(9, empresa.getSenha());
+			
+			statement.execute();
+			statement.close();
+			
+			System.out.println("Empresa cadastrada com sucesso");
+			
+		} catch (SQLException e) {
+			System.out.println("Erro ao tentar cadastrar usuario");
+		}
+		
+	}	
+		
+		//Metodo para buscar empresa por id
+		public Empresa buscaPorId(int id){
+			//String para guardar a query
+			String sql = "select e.nome,e.ramoAtividade,e.qtdfuncionarios,e.fk_endereco,e.telefone,e.pessoaContato,"
+					+ "e.descricao,e.email from empresas as e where idEmpresa= ? ";
+			
+			//Declarando objeto da classe empresa
+			Empresa empresa = null;
+			
+			//Tentar executar a query
+			try {
+				//preparar o statement
+				PreparedStatement stmt = conexaoDBUsuario.prepareStatement(sql);
+				stmt.setInt(1, id);
+				
+				//Executar e armzenar o resultado da query
+				ResultSet resultado = stmt.executeQuery();
+				
+				while(resultado.next()){
+					empresa = new Empresa();
+					empresa.setNome(resultado.getString(1));
+					empresa.setRamoAtividade(resultado.getString(2));
+					empresa.setQtdfuncionarios(resultado.getInt(3));
+					empresa.setFkEndereco(resultado.getInt(4));
+					empresa.setTelefone(resultado.getString(5));
+					empresa.setPessoaContato(resultado.getString(6));
+					empresa.setDescricao(resultado.getString(7));
+					empresa.setEmail(resultado.getString(8));
+				}
+				
+				//Chamar metodo para buscar endereco
+				EnderecoDAO enderecoDao = new EnderecoDAO();
+				empresa.setEndereco(enderecoDao.buscarPorId(empresa.getFkEndereco()));
+				
+			} catch (SQLException e) {
+				 
+			}
+		
+	}
+}

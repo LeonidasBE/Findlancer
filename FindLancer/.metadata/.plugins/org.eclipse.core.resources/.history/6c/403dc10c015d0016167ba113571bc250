@@ -1,0 +1,14 @@
+package br.com.findlancer.tests;
+
+import br.com.findlancer.entidades.FreelancerController;
+import br.com.findlancer.entidades.Freelancers;
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	
+	 Freelancers freela=new Freelancers();
+	 freela.setTelefone("(33)3333-3333");
+	 
+ }
+}

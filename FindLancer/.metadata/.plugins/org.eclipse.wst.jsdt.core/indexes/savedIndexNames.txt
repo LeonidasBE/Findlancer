@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\ProjetoTCC\FindLancer\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3170637033.index
+2502902422.index
+3584119868.index
+3149837453.index
+1462461119.index
+2944238918.index

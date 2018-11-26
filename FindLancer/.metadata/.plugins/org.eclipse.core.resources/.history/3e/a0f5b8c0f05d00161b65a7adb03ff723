@@ -1,0 +1,77 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+
+          <div id="conteudo" class="conteudoPerfil">
+              <div class="fotoPerfil"></div>  
+              <div id="fundoFoto">
+                    
+                  <div id="avaliarPerfil">
+                      <fieldset class="rating">
+                        <legend>Please rate:</legend>
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                      </fieldset>
+                       
+                 </div> 
+              </div>
+                  
+                  <div id="txtNome">
+                             <h1><% out.print("teste"); %></h1>
+                        <p>Cidade,18</p>
+                  </div>    
+                   
+                  <div id="divTextos">
+                        <div id="txtAval">
+                             <h4>FeedBack:</h4>
+                            <div id="iconAval"></div>
+                         </div>
+              
+                        <div id="txtEmail">
+                           <h4>E-mail: </h4>
+                           <p> contato@exemplo.com</p>      
+                         </div>      
+                  
+                        <div id="txtMembro">
+                            <p>Membro desde <strong>Mai de 2016</strong></p>      
+                         </div>    
+                  
+                         <div id="txtTelefone">
+                             <h4>Contato:</h4>
+                             <p>(47)3328-6128</p>   
+                        </div>
+                  </div>
+                  <div id="textoDesc">
+                      <h2>Sobre Marcos</h2>
+                      <p>No menu Inserir, as galerias incluem itens que são projetados para corresponder à aparência geral do documento.
+                        Você pode usar essas galerias para inserir tabelas, cabeçalhos, rodapés, listas, folhas de rosto e outros
+                        blocos de construção do documento.
+                        Quando você cria imagens, gráficos ou diagramas, esses elementos também são coordenados com a aparência atual do documento.</p>
+                  </div>
+                
+                  <div id="formacao" class="cardPerfil">
+                      <h2 class="titPerfil">Formação de Marcos</h2>
+                        <p class="txtPerfil">- Ciência da computação - FURB</p>       
+                  </div>
+              
+                 <div id="categoriaPerfil" class="cardPerfil">
+                      <h2 class="titPerfil">Categoria profissional</h2>
+                        <p class="txtPerfil">- Desenvolvimento WEB </p>      
+                 </div>
+              
+                  <div id="subcategoriaPerfil" class="cardPerfil">
+                      <h2 class="titPerfil">Subcategoria profissional</h2>
+                        <p class="txtPerfil">- Desenvolvimento blabla </p>      
+                 </div>
+              
+                 <div id="experiencia" class="cardPerfil">
+                      <h2 class="titPerfil">Experiências profissionais</h2>
+                        <p class="txtPerfil">- Programador Java </p>      
+                 </div>
+                
+                 
+              
+          </div>
+<%@ include file="rodape.jsp" %>

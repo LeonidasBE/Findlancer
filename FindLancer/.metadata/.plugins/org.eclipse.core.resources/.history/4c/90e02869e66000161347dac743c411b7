@@ -1,0 +1,13 @@
+
+public class Main {
+	public static void main(String[] args) {
+		
+			
+		for(int ind =0;ind<=60;ind++){
+			 
+			if(ind % 10 == 0){
+				System.out.println(ind+" ºC");
+			}
+		}
+	}
+}

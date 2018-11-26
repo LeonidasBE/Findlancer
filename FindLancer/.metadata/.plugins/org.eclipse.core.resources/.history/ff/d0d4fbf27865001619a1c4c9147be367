@@ -1,0 +1,107 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@page import="br.com.findlancer.model.Freelancer"%>  
+<%@ include file="topo.jsp" %>
+
+          <div id="conteudo" class="conteudoPerfil">
+              
+              <img class="fotoPerfil"  src="C:\Users\Marcos Vinicius\Desktop\FindLancer\.metadata\.plugins\org.eclipse.wst.server.core\tmp4\wtpwebapps\Projeto\img\leonidas.jpg">  
+              <div id="fundoFoto">
+              	<form action="upload" method="post" enctype="multipart/form-data">
+					<input type="file" name="file" id="file"/> 
+					<input type="submit" value="Enviar" />
+				</form>
+              </div>
+                  <% 
+                  	 /*Instanciando novo objeto freelancer e armazenando 
+                  	 o perfil enviado peloe controller*/	 
+                 	 Freelancer freelancer = (Freelancer)session.getAttribute("perfilFreelancer");
+                  
+                     //Variaveis para receber os dados
+                  	 String nome = freelancer.getNome();
+                     String formacao = freelancer.getFormacao();
+                     String experiencia = freelancer.getExperiencia();
+                     String descricao = freelancer.getDescricao();
+                     String cidade = freelancer.getEndereco().getCidade().getNomeCidade();
+                     String estado = freelancer.getEndereco().getCidade().getEstado().getSiglaEstado();
+                     String rua = freelancer.getEndereco().getNomeRua();
+                     String bairro = freelancer.getEndereco().getBairro();
+                     int numero = freelancer.getEndereco().getNumero();
+                     int cep = freelancer.getEndereco().getCep();
+                     int idade = freelancer.getIdade();
+                     String email = freelancer.getEmail(); 
+                     String telefone = freelancer.getTelefone();
+                     String subcategoria = freelancer.getSubcategoria().getDescricao();
+                     String categoria = freelancer.getSubcategoria().getCategoria().getDescricao();
+                     
+                     int idLogado = (Integer)session.getAttribute("id");
+                     int idPerfil = (Integer)session.getAttribute("idValida");
+                     
+                     session.setAttribute("emailUsu", email);
+                  %>
+                  <div id="txtNome">
+                        <h1><%= nome %></h1>
+                        <p><%= cidade+"-"+estado+", "+idade  %></p>
+                  </div>    
+                   
+                  <div id="divTextos">
+                          <span>FeedBack Geral: 5</span> 
+                          <span> E-mail: <%= email  %></span>  
+                           <span>Contato: <%= telefone   %></span>
+                      
+                  </div>
+                
+                 
+                  
+                <% 
+                	//Verifica se o perfil do usuário é o logado ou é de outro perfil
+                	if(idPerfil != idLogado){
+                %>
+                	
+                   <fieldset class="rating"> 
+          			   <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Ótimo!"></label>
+             		   <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Bom!"></label>
+           			   <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Médio"></label>
+            		   <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Ruim!"></label>
+                       <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Muito ruim!"></label>
+                  </fieldset>
+        	   <% } %>
+                
+                
+                
+                  <div id="textoDesc">
+                      <h2>Sobre <%= nome %></h2>
+                      <p><%= descricao   %></p>
+                  </div>
+                
+                  <div id="formacao" class="cardPerfil">
+                      <h2 class="titPerfil">Formação de <%= nome %></h2>
+                        <p class="txtPerfil"><%= idPerfil+" "+idLogado %></p>       
+                  </div>
+              
+                 <div id="categoriaPerfil" class="cardPerfil">
+                      <h2 class="titPerfil">Categoria profissional</h2>
+                        <p class="txtPerfil"><%= categoria  %></p>      
+                 </div>
+              
+                  <div id="subcategoriaPerfil" class="cardPerfil">
+                      <h2 class="titPerfil">Subcategoria profissional</h2>
+                        <p class="txtPerfil"><%= subcategoria %></p>      
+                 </div>
+              
+                 <div id="experiencia" class="cardPerfil">
+                      <h2 class="titPerfil">Experiências profissionais</h2>
+                        <p class="txtPerfil"><%= experiencia  %></p>      
+                 </div>
+                 
+                 <div id="Endereco" class="cardPerfil">
+                      <h2 class="titPerfil">Endereco</h2>
+                        <p class="txtPerfil">Rua:  <%= rua  %></p>      
+                        <p class="txtPerfil">Bairro:<%= bairro   %></p>      
+                        <p class="txtPerfil">Numero:<%= numero %></p>      
+                        <p class="txtPerfil">Cep:<%= cep   %></p>      
+                 </div>
+                
+                 
+              
+          </div>
+<%@ include file="rodape.jsp" %>

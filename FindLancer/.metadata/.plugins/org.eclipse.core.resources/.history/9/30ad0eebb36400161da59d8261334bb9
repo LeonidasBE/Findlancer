@@ -1,0 +1,13 @@
+package br.com.findlancer.sql;
+
+import br.com.findlancer.model.Freelancer;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		 
+			Freelancer free =new Freelancer();
+			free.converterData("");
+			}
+
+}

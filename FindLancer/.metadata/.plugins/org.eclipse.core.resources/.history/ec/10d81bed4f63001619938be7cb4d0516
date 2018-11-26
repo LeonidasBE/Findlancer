@@ -1,0 +1,148 @@
+ 	package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.JOptionPane;
+
+import br.com.findlancer.model.Categoria;
+import br.com.findlancer.model.Cidades;
+import br.com.findlancer.model.Enderecos;
+import br.com.findlancer.model.Estados;
+import br.com.findlancer.model.Freelancers;
+import br.com.findlancer.model.Subcategorias;
+
+public class FreelancerDAO {
+    
+	Connection conexaoDBUsuario = Conexao.conectar();
+	
+	public void Cadastrar(Freelancers freelancer){
+			try {
+				String sql = "insert into freelancers(nome,descricaoTrabalho,email,experiencia, "
+						+ "formacao,nascimento,senha,fk_subcategoria,telefone,fk_endereco) "
+						+ "values(?,?,?,?,?,?,?,?,?,?)";
+				
+				
+				PreparedStatement statement = conexaoDBUsuario.prepareStatement(sql);
+				statement.setString(1, freelancer.getNome());
+				statement.setString(2, freelancer.getDescricao());
+				statement.setString(3, freelancer.getEmail());
+				statement.setString(4, freelancer.getExperiencia());
+				statement.setString(5, freelancer.getFormacao()); 
+				statement.setString(6, freelancer.getNascimento());
+				statement.setString(7, freelancer.getSenha());
+				statement.setInt(8, freelancer.getFksubcategoria()); 
+				statement.setString(9, freelancer.getTelefone());
+				statement.setInt(10, freelancer.getFk_endereco());
+				
+				statement.execute();
+				statement.close();
+				
+				System.out.println("Cadastrado com sucesso");
+			} catch (SQLException e) {
+				System.out.println("Erro ao tentar cadastrar usuario");
+		}
+	}
+	
+	public ArrayList<List> perfilFreelancer(int id){
+		
+		ArrayList<List> listageral= null;
+		
+		List<Freelancers> freelancers =null;
+		List<Enderecos> enderecos = null;
+		List<Cidades> cidades = null;
+		List<Estados> estados = null;
+		List<Subcategorias> subcategorias = null;
+		List<Categoria> categorias = null;
+		
+		String sql = "select f.nome,f.telefone,f.email,f.descricaoTrabalho,f.formacao, "
+				+ "f.experiencia,TIMESTAMPDIFF(YEAR, f.nascimento, NOW()),  "
+				+ "e.nome_Rua,e.bairro, e.numero,e.cep ,c.nomeCidade,es.sgEstado,sub.descricao, "
+				+ "cat.descricao from freelancers as f inner join enderecos as e  "
+				+ "on f.fk_endereco = e.idEndereco inner join cidades as c on e.fk_cidade  "
+				+ "= c.idCidade inner join estados as es on c.fk_estado = es.idEstado inner  "
+				+ "join subcategorias as sub on f.fk_subcategoria = sub.idSubcategoria inner join  "
+				+ "categorias as cat on sub.fk_categoria = cat.idCategoria where f.idFreelancer = ?";
+				
+		try {
+			
+			//Preparar o statement
+			PreparedStatement statement = conexaoDBUsuario.prepareStatement(sql);
+			
+			statement.setInt(1, id);
+			
+			ResultSet resultado = statement.executeQuery();
+			
+			listageral = new ArrayList<List>();
+			freelancers = new ArrayList<Freelancers>();
+			enderecos = new ArrayList<Enderecos>();
+			cidades = new ArrayList<Cidades>();
+			estados = new ArrayList<Estados>();
+			categorias = new ArrayList<Categoria>();
+			subcategorias = new ArrayList<Subcategorias>();
+			
+			//if para capturar os dados do resultset
+			while(resultado.next()){
+				
+				Freelancers f1 = new Freelancers();
+				f1.setNome(resultado.getString(1));
+				f1.setTelefone(resultado.getString(2));
+				f1.setEmail(resultado.getString(3));
+				f1.setDescricao(resultado.getString(4));
+				f1.setFormacao(resultado.getString(5));
+				f1.setExperiencia(resultado.getString(6)); 
+				f1.setIdade(resultado.getInt(7));
+				
+				freelancers.add(f1);
+				
+				Enderecos e1 = new Enderecos();
+				e1.setNomeRua(resultado.getString(8));
+				e1.setBairro(resultado.getString(9));
+				e1.setNumero(resultado.getInt(10));
+				e1.setCep(resultado.getInt(11));
+				
+				enderecos.add(e1);
+				
+				Cidades c1 = new Cidades();
+				c1.setNomeCidade(resultado.getString(12));
+				
+				cidades.add(c1);
+				
+				Estados es1 = new Estados();
+				es1.setSiglaEstado(resultado.getString(13));
+				
+				estados.add(es1);
+				
+				Subcategorias sub1 = new Subcategorias();
+				sub1.setDescricao(resultado.getString(14));
+				
+				subcategorias.add(sub1);
+				
+				Categoria cat1 = new Categoria();
+				cat1.setDescricao(resultado.getString(15));
+				
+				categorias.add(cat1);
+				
+				listageral.add(freelancers);
+				listageral.add(enderecos);
+				listageral.add(cidades);
+				listageral.add(estados);
+				listageral.add(categorias);
+				listageral.add(subcategorias);
+				
+				
+			}
+			
+			System.out.println("Lista geral");
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, "Busca por id erro!");
+			System.out.println("Erro lista");
+		}
+		
+		return listageral;
+	}
+}

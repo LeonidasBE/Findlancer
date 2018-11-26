@@ -1,0 +1,28 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+
+           <div id="conteudo" class="conteudovagas">
+               <div id="bgVagas">
+                  
+                   <h1>Suas vagas</h1>
+                 <img src="C:\Users\Marcos Vinicius\Desktop\FindLancer\.metadata\.plugins\org.eclipse.wst.server.core\tmp4\wtpwebapps\Projeto\img">
+                   <div id="anuncio">
+                       <div id="conteudoAnuncio">
+                           <a class="linkAnuncio" id="linkTitulo">Titulo da vaga</a>
+                              
+                        <div class="codvaga">cod. 4387</div>
+                            
+                        <div id="textoDesc-minhasVagas">   
+                            <h3>Descrição</h3>
+                            <p>Aqui vai a descricao da vaga que foi informada no cadastro da vaga.</p>
+                        </div> 
+                           <h3 id="salvaga">Salário: R$</h3><p>R$500,00</p>
+                       </div>   
+                       <div id="qtdVagas">
+                            <h5>Nº de vagas: 4</h5>
+                       </div> 
+                   </div>  
+               </div>
+          </div>        
+    
+<%@ include file="rodape.jsp" %>

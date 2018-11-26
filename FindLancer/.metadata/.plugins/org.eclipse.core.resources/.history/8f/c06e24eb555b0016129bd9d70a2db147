@@ -1,0 +1,9 @@
+package br.com.findlancer.entidades;
+
+public class Freenlancers extends Usuarios {
+	private String nascimento;
+	private String categoria;
+	private String subcategoria;
+	private String formacao;
+	private String experiencia;
+}

@@ -1,0 +1,61 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+
+          <div id="conteudo" class="conteudoPerfil">
+              <div class="fotoPerfil"></div>  
+              <div id="fundoFoto">
+                    
+                  <div id="avaliarPerfil">
+                      <h4 id="titAvaliar">Avalie este perfil:</h4>
+                      <div id="imgAvaliar"></div>
+                 </div> 
+              </div>
+                  
+                  <div id="txtNome">
+                             <h1>ProWay</h1>
+                        <p>Blusmenau</p>
+                  </div>    
+                   
+                  <div id="divTextos">
+                        <div id="txtAval">
+                             <h4>FeedBack:</h4>
+                            <div id="iconAval"></div>
+                         </div>
+              
+                        <div id="txtEmail">
+                           <h4>E-mail: </h4>
+                           <p></p>      
+                         </div>      
+                  
+                         <div id="txtTelefone">
+                             <h4>Contato:</h4>
+                             <p> </p>   
+                        </div>
+                  </div>
+                  <div id="textoDesc">
+                      <h2>Sobre  </h2>
+                      <p> </p>
+                  </div>
+                
+                  <div id="ramo" class="cardPerfil">
+                      <h2 class="titPerfil">Dados da empresa</h2>
+                          <h3>Endereço:</h3>
+                          <p> Rua:</p>
+                          <p> Bairro:</p>
+                          <h3>Ramo de atividade:</h3>
+                          <p> Desenvolvimento WEB</p>
+                          <p> Desenvolvimento Mobile</p>
+                          <h3>Número de funcionários:</h3>
+                          <p> 10</p>
+                          <h3>Pessoa responsável para contato</h3>
+                          <p>Marcos</p>  
+                  </div>
+              
+                   <div id="vagasPerfilEmpresa" class="cardPerfil">
+                      <h2 class="titPerfil">Vagas desta empresa</h2>
+                       <h3>Há 2 <a href="resultados.jsp">vagas</a> desta empresa</h3>
+                  </div>
+                  
+              
+          </div>
+<%@ include file="rodape.jsp" %>

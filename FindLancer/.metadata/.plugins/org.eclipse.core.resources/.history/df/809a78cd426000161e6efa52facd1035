@@ -1,0 +1,48 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+ 
+import br.com.findlancer.entidades.Subcategorias;
+
+public class SubcategoriasDAO {
+	
+	//Variavel de conexao
+	Connection conexaoDB= Conexao.conectar();
+	
+	public ArrayList<Subcategorias> popularSubcaategorias(int fkCat){
+		ArrayList<Subcategorias> listaSub = null;
+		try {
+
+			String sql ="select * from subcategorias where fkCategoria=?";
+			
+			try {
+				 
+				PreparedStatement stmt = Conexao.conectar().prepareStatement(sql);
+				stmt.setInt(1, fkCat);
+				ResultSet rs = stmt.executeQuery();
+				listaSub = new 	ArrayList<Subcategorias>();
+				while(rs.next()){
+					
+					listaSub.add(rs.getString(1));
+				}
+				System.out.println("Pos statement");
+			} catch (SQLException e) {
+				System.out.println("erro sql");
+			}
+			
+			System.out.println("Query subcategorias ok.");
+			
+		} catch (SQLException e) {
+			System.out.println("Query subcategorias erro.");
+
+		}
+		
+		return listaSubategorias;
+	}
+}
+

@@ -1,0 +1,42 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.findlancer.entidades.Empresas;
+
+public class EmpresaDAO {
+		
+	Connection conexaoDBUsuario = Conexao.conectar();
+	public void Cadastrar(Empresas empresa){
+		try {
+			String sql = "insert into empresas(bairro,cep,cidade,cnpj,descricao,email,endereco,nome,pessoaContato,ramoAtividade,razaoSocial,senha,telefone,qtdfuncionarios)"
+					+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			
+			PreparedStatement statement = conexaoDBUsuario.prepareStatement(sql);
+			statement.setString(1, empresa.getBairro() );
+			statement.setString(1, empresa.getCep() );
+			statement.setString(1, empresa.getCidade() );
+			statement.setString(1, empresa.getCnpj() );
+			statement.setString(1, empresa.getDescricao() );
+			statement.setString(1, empresa.getEmail() );
+			statement.setString(1, empresa.getEndereco() );
+			statement.setString(1, empresa.getNome() );
+			statement.setString(1, empresa.getPessoaContato() );
+			statement.setString(1, empresa.getRamoAtividade() );
+			statement.setString(1, empresa.getRazaoSocial() );
+			statement.setString(1, empresa.getSenha() );
+			statement.setString(1, empresa.getTelefone() );
+			statement.setInt(1, empresa.getQtdfuncionarios() );
+			statement.execute();
+			statement.close();
+			
+			System.out.println("Empresa cadastrada com sucesso");
+			
+		} catch (SQLException e) {
+			System.out.println("Erro ao tentar cadastrar usuario");
+		}
+		
+	}
+}

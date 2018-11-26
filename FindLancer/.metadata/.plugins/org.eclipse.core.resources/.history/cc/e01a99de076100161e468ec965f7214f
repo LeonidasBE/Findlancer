@@ -1,0 +1,53 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+
+import br.com.findlancer.model.Categorias;
+import br.com.findlancer.model.Estados;
+
+public class EstadosDAO {
+	
+	Connection conexaoDB= Conexao.conectar();
+	
+	public ArrayList<Estados> popularEstados(){
+		//String com a query para selecionar todos os estados
+		String sql="select idEstado,sgEstado from estados";
+		
+		//Arraylist para armazenar os estados
+		ArrayList listaEstados = null;
+		
+		//Try para tentar executar a query
+		try {
+			//Preparar a query
+			PreparedStatement stmt = conexaoDB.prepareStatement(sql);
+			
+			//ResultSet para armazenar resultado da query
+			ResultSet resultado = stmt.executeQuery();
+			
+			//Instanciando a nova lista 
+			listaEstados= new ArrayList<>();
+			
+			//While para capturar todos os resultados da query
+			while(resultado.next()){
+				//Nova instancia de objeto da classe estados
+				Estados estado1 = new Estados();
+				
+				//Atribuindo valores da query no objeto da classe Estados
+				estado1.setIdEstado(resultado.getInt(1));
+				estado1.setSiglaEstado(resultado.getString(1));
+				
+				//Armazenando objeto na lista de Estados
+				listaEstados.add(estado1);
+			}
+			
+			System.out.println("Sucesso ao tentar selecionar todos os estados");
+		} catch (Exception e) {
+			System.out.println("Erro ao tentar selecionar todos os estados");
+		}
+		
+		return listaEstados;
+	}
+}

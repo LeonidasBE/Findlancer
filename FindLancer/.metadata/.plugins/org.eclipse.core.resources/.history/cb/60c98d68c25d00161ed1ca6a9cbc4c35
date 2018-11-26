@@ -1,0 +1,55 @@
+package br.com.findlancer.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+ 
+@WebServlet("/empresacontroller.do")
+public class EmpresaController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+    public EmpresaController() {
+        super();
+
+    }
+
+	 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String acaoPost = request.getParameter("acao");  
+
+		
+		if(acaoPost.equals("cadastrarempresa")){
+			String razao = request.getParameter("razaoSocial");
+			String ramo = request.getParameter("ramoAtividade");
+			String endereco = request.getParameter("endereco");
+			String bairro = request.getParameter("bairro");
+			String telefone = request.getParameter("telefoneEmpresa");
+			String nfuncionarios = request.getParameter("qtdfuncionarios");
+			String email = request.getParameter("emailEmpresa");
+			String descricao = request.getParameter("descricaoEmpresa");
+			String nomeFantasia = request.getParameter("nome");
+			String cnpj = request.getParameter("cnpj");
+			String cidade = request.getParameter("cidadeEmpresa");
+			String cep = request.getParameter("cep");
+			String pessoacontato = request.getParameter("pessoaContato");
+			String senha = request.getParameter("senhaEmpresa");
+			
+			
+			
+			
+		}
+		
+		
+	}
+
+}

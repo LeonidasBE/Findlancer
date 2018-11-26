@@ -1,0 +1,10 @@
+package br.com.findlancer.model;
+
+public class Enderecos {
+	private int idEndereco;
+	private int numeroRua;
+	private int cep;
+	private String bairro;
+	private String nomeRua;
+	private int fk_cidade;
+}

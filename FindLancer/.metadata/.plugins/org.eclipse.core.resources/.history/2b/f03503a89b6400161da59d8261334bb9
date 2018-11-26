@@ -1,0 +1,12 @@
+package br.com.findlancer.sql;
+
+import br.com.findlancer.model.Empresa;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		 
+			
+	}
+
+}

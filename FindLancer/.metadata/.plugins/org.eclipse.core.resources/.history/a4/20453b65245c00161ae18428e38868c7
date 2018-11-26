@@ -1,0 +1,14 @@
+package br.com.findlancer.tests;
+
+import br.com.findlancer.entidades.Freelancers;
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	 
+	 
+	   Freelancers free = new Freelancers();
+	   free.setNascimento("11/06/2016");
+	   System.out.println(free.getNascimento());
+}
+}

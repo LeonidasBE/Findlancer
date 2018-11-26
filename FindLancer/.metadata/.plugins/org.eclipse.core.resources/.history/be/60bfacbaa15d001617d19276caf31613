@@ -1,0 +1,78 @@
+package br.com.findlancer.entidades;
+
+public class Empresas extends Usuarios{
+	private String razaoSocial;
+	private String nome;
+	private String ramoAtividade;
+	private String cnpj;
+	private int qtdfuncionarios;
+	private String endereco;
+	private String bairro;
+	private String cep;
+	private String pessoaContato;
+	
+	
+	
+	public String getRazaoSocial() {
+		return razaoSocial;
+	}
+	public void setRazaoSocial(String razaoSocial) {
+		this.razaoSocial = razaoSocial;
+	}
+	public String getNomeFantasia() {
+		return nomeFantasia;
+	}
+	public void setNomeFantasia(String nomeFantasia) {
+		this.nomeFantasia = nomeFantasia;
+	}
+	public String getRamoAtividade() {
+		return ramoAtividade;
+	}
+	public void setRamoAtividade(String ramoAtividade) {
+		this.ramoAtividade = ramoAtividade;
+	}
+	public String getCnpj() {
+		return cnpj;
+	}
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+	public int getQtdfuncionarios() {
+		return qtdfuncionarios;
+	}
+	public void setQtdfuncionarios(int qtdfuncionarios) {
+		this.qtdfuncionarios = qtdfuncionarios;
+	}
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+	public String getBairro() {
+		return bairro;
+	}
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+	public String getCep() {
+		return cep;
+	}
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+	public String getPessoaContato() {
+		return pessoaContato;
+	}
+	public void setPessoaContato(String pessoaContato) {
+		this.pessoaContato = pessoaContato;
+	}
+	
+	
+	
+	
+	
+	
+	
+
+}

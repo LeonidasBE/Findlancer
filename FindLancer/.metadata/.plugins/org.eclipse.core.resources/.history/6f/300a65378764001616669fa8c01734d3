@@ -1,0 +1,85 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+
+           <div id="conteudo" class="conteudocadvaga">
+                <div class="divback">
+                    <h1>Anuncie sua vaga</h1>
+                    <div id="msgalerta"><p id="alerta"></p><a id="btok">OK</a></div>
+                    
+                    <form id="cadvaga">
+                        <div id="pt1">
+                            <h2>O que você precisa?</h2>
+                            
+                            <textarea placeholder="Exemplo:Programador Front-End - para desenvolver web para minha empresa" class="necessidade"></textarea>
+                             
+                        <h2>Experiência requerida:</h2>
+
+                        <select class="experiencia">
+
+                            <option value="">Selecione uma opção</option>
+                            <option value="junior">Junior (menos de 3 anos)</option>
+                            <option value="intermediario">Intermediário (3-5 anos)</option>
+                            <option value="senior">Sênior (6-10 anos)</option>
+                            <option value="especialista">Especialista (+10 anos)</option>
+
+                        </select>   
+                         
+                         <h2>Email para contato:</h2>
+                         <input type="text" class="email"> 
+                         <br>     
+                         <br>     
+                        <input type="submit" value="Salvar" class="btsalvar">
+                        
+                        </div>
+                        
+                        <div id="pt2">
+                            <h2>Categoria:</h2>
+                            
+                            <select class="categoria">
+                                <option value="">Selecione uma categoria</option>
+                                <option value="WEB">Desenvolvimento web e mobile</option>
+                                <option value="DesignMultimedia">Design e Multimedia</option>
+                                <option value="InformaticaTelecomunicacoes">Informática e Telecomunicações</option>
+                                <option value="RedatorTraducao">Redator e Tradução</option>
+                                <option value="MarketingVendas">Marketing e Vendas</option>
+                                <option value="EngenhariaArquitetura">Engenharia e Arquitetura</option>
+                                <option value="Servicosempresariais">Serviços empresariais</option>
+                                <option value="SuporteAdministrativo">Suporte Administrativo</option>
+                                <option value="AdvocaciaLeis">Advocacia e Leis</option>
+                                <option value="Teleinformacao">Teleinformação</option>
+                                <option value="Coaching">Coaching</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                            
+                            <h2>Vaga:</h2>
+                            <select class="vaga">
+                                <option value="">Selecione uma opção</option>
+                                <option value="emprego">Emprego</option>
+                                <option value="trainee">Trainee</option>
+                                <option value="freela">Freela</option>
+                                <option value="estagio">Estágio</option>
+                                <option value="volutariado">Voluntariado</option>
+                             </select>
+                            
+                             <h2>Formação:</h2>
+                            <select class="formacao">
+                                <option value="">Selecione uma opção</option>
+                                <option value="ensinoFundamental">Ensino fundamental</option>
+                                <option value="ensinoMedio">Ensino médio</option>
+                                <option value="ensinoSuperiorInc">Ensino superior incompleto</option>
+                                <option value="ensinoSuperiorCom">Ensino superior completo</option>
+                                <option value="posGraduacao">Pós-graduação</option>
+                                <option value="doutorado">Doutorado</option>
+                                <option value="engenhariaSuperior">Engenharia Superior</option>
+                                <option value="MestradoPosgraduacao">Mestrado ou Pós-graduação</option>
+                                <option value="nulo">Não solicitar</option>
+                            </select> 
+                            
+                            <h2>Salário:</h2>
+                            <input type="text" value="" id="salario" >
+                        </div>
+                    </form>     
+                </div>
+                </div>
+    
+<%@ include file="rodape.jsp" %>

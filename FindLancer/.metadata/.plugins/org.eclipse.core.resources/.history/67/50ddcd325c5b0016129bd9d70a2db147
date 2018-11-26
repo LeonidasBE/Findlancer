@@ -1,0 +1,47 @@
+package br.com.findlancer.entidades;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class FreelancerController
+ */
+@WebServlet("/freelacontroller.do")
+public class FreelancerController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+     
+    public FreelancerController() {
+        super();
+         
+    }
+ 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		    String nascimento;
+		    String categoria;
+			String subcategoria;
+			String formacao;
+			String experiencia;
+		
+		 System.out.println("Nome - "+nome+" Senha - "+senha);
+		 
+		 Usuario usuario1 = new Usuario();
+		 usuario1.setNome(nome);
+		 usuario1.setSenha(senha);
+		 
+		 UsuarioSQL usuarioSQL = new UsuarioSQL();
+		 usuarioSQL.cadastrar(usuario1); 
+		
+		
+	}
+ 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+	}
+
+}

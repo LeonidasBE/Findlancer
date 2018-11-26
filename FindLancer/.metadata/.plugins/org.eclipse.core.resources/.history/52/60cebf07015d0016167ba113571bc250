@@ -1,0 +1,10 @@
+package br.com.findlancer.tests;
+
+
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	 
+ }
+}

@@ -1,0 +1,96 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+
+          <div id="conteudo" class="conteudocadempresa">
+             <div class="divback">
+                  <div id="msgalerta"><p id="alerta"></p><a id="btok">OK</a></div>
+                     	
+                 <form id="form-cad" class="form-inline" role="form" action="empresacontroller.do?acao=cadastrarempresa" method="post">
+                 <h1 id="titulo-cad">Cadastre sua empresa</h1>    
+                        <div class="form-group"> 
+                          	<label id="hnome">Nome</label><br/>
+                          	<input type="text" name="nomeFreela" id="campoNome" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                        	<label id="hfone">Telefone:</label><br/>
+                         	<input type="text" name="telefoneEmpresa" id="fone"  class="form-control">
+                         </div>
+                        
+                         <div class="form-group">
+                            <label>E-mail:</label><br/>
+                            <input type="text" name="emailEmpresa" id="email"  class="form-control">
+                         </div>
+                         <br/>
+                          
+                          <div class="form-group">
+                            <label>Pessoa para contato:</label> 
+                            <input type="text" name="pessoaContato" id=""  class="form-control">
+                         </div>
+                         
+                         <div class="form-group"> 
+                         	<label id="hbairro">Bairro:</label> 
+                         	<input type="text" name="nbairro"  class="form-control" id="bairro">
+                         </div>
+                         
+                         <div class="form-group">                        
+	                         <label id="hendereco">CEP:</label> 
+	                         <input type="text" name="ncep"  class="form-control" id="cep"> 
+	                     </div>   
+	                     
+	                        
+	                     <div class="form-group">
+	                          <label id="hendereco">Rua:</label> 
+	                          <input type="text" name="nrua"  class="form-control" id="rua">     
+	                     </div>  
+	                       
+	                     <div class="form-group">
+	                          <label id="hendereco">Número:</label> 
+	                          <input type="number" name="nnumero"  class="form-control" id="numerorua">     
+	                     </div>   
+	                     
+	                      
+	                      <div class="form-group">     
+	                         <label>Estado</label> 
+	                         <select  class="form-control" name="nestado" id="estado">
+	                    		<option value="">Selecione seu estado</option>
+	                         </select>
+	                      </div>
+	                      
+	                        <div class="form-group">     
+	                         <label>Cidade</label>
+	                         <select  class="form-control" name="ncidade" id="cidades">
+	                    		<option value="">Selecione sua cidade</option>
+	                         </select>
+	                      </div>
+	                   
+	                      <div class="form-group">
+	                        <label>Senha</label> 
+	                        <input type="password" name="senhaEmpresa"  class="form-control" id="senha"> 
+	                      </div>	
+	                    
+	                    <div class="form-group">	
+	                        <label>Repita sua senha</label> 	                        
+	                        <input class="form-control" type="password"  id="senha2">
+	                    </div>
+	                    <br/>
+	                      
+						<div class="form-group">
+	                        <label>Descreva a empresa:</label> 
+	                        <textarea  class="form-control" name="descricaoFreela" placeholder="Exemplo: Programador - PHP,JAVA e etc."></textarea>
+	                    </div>
+	                    
+	                    <div class="form-group">
+	                        <label>Ramo:</label><br/>
+	                        <textarea  class="form-control" name="descricaoFreela" placeholder="Exemplo: Programador - PHP,JAVA e etc."></textarea>
+	                    </div>
+	                    <br/>
+	                  
+	                   	<div id="divBotao"> 
+                        	<input  type="submit" value="Salvar" class="btsalvar">
+                        </div>
+                 </form>
+          </div> 
+    </div>
+    
+<%@ include file="rodape.jsp" %>

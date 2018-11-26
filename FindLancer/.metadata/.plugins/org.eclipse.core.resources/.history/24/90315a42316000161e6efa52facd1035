@@ -1,0 +1,27 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.List;
+
+import br.com.findlancer.entidades.Empresas;
+
+public class CategoriasDAO {
+
+	Connection conexaoDB= Conexao.conectar();
+	public void Cadastrar(){
+		
+		try {
+			String sql = ;
+			
+			
+			System.out.println("Empresa cadastrada com sucesso");
+			
+		} catch (SQLException e) {
+			System.out.println("Erro ao tentar cadastrar usuario");
+		}
+		
+	}
+}
+

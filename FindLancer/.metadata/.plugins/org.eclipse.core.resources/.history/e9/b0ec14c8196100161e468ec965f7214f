@@ -1,0 +1,16 @@
+package br.com.findlancer.tests;
+
+import br.com.findlancer.model.Enderecos;
+import br.com.findlancer.sql.LoginDAO;
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	 Enderecos endereco = new Enderecos();
+	 endereco.setBairro("Velha");
+	 endereco.setCep(89042330);
+	 endereco.setFk_cidade(13);
+	 endereco.setNomeRua("Angelina");
+	 
+ }
+}

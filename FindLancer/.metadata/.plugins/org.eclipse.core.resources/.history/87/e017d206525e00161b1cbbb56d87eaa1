@@ -1,0 +1,49 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class LoginDAO {
+	
+	Connection conexaoDB = Conexao.conectar();
+
+    public int logar(String email,String senha){
+    	int idUsuario = 0;
+    	String sql ="select idfree as id from freelancers where email = ? and senha = ?";
+		//sql="SELECT empresas.idEmpresa FROM empresas WHERE empresas.email =? and empresas.senha = ? )";
+			
+			
+		
+		return idUsuario;
+    }
+	
+    public String teste(int id ){
+    	/*String nome="erro";
+    	String sql ="select nome from freelancers where idFree = ? ";
+		try {
+			PreparedStatement statement = conexaoDB.prepareStatement(sql);
+			statement.setInt(1, id);
+			
+			ResultSet resultado = statement.executeQuery();
+			
+			if(resultado.next()){
+				nome=resultado.getString(1);
+			}
+			
+			System.out.println("Login verificado.");
+		} catch (SQLException e) {
+			System.out.println("Erro ao verificar login.");
+		}
+    	
+    	return nome;*/
+    	
+    	return null;
+    }
+    
+    public int logarSelectMétodo(String sql){
+    	
+    }
+	
+}

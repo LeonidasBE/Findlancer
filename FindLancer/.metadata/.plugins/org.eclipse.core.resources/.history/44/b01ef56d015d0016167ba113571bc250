@@ -1,0 +1,14 @@
+package br.com.findlancer.tests;
+
+import javax.swing.JOptionPane;
+
+public class Olamundo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String nome;
+		nome=JOptionPane.showInputDialog(null, "Digite seu nome");
+		JOptionPane.showMessageDialog(null, nome);
+	}
+
+}

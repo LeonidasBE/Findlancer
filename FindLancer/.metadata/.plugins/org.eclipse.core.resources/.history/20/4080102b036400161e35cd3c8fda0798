@@ -1,0 +1,1084 @@
+
+
+/*Definicoes para o conteudo*/
+
+.divback{
+    background: rgba(0,0,0,0.5);
+    width: 100%; ;
+    padding-top:30px;
+    overflow: auto;
+}
+
+#conteudo{
+    width:100%;
+    padding-top:100px;
+}
+
+/*Pagina home*/
+#conteudo > .fotorama{
+    background-color: white;
+}
+
+
+#conteudo > #textoHome{
+    color:black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color:  white;
+    font-size: 21px;
+}
+
+#conteudo > #textoHome >h2{
+    margin-left: 15px;
+}
+
+#conteudo > #textoHome>p{
+    margin-left: 30px;
+}
+
+#conteudo > #areasdeatuacao  {
+    width:1000px; 
+    margin: 0px auto;
+    margin-top:40px;
+    height: 600px;
+}
+
+#conteudo > #areasdeatuacao > h2{
+  color:white;
+  text-align: center;
+}
+
+
+#conteudo > #areasdeatuacao > #listcard1 {
+    height: 245px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+#conteudo > #areasdeatuacao > #listcard1 > #card1,#card2,#card3{
+    float:left;
+    margin-left: 25px;
+}
+
+#conteudo > #areasdeatuacao > #listcard1 > #card1 > #programadores{
+  background-image: url(../img/programmer.jpg);
+}
+
+#conteudo > #areasdeatuacao > #listcard1 > #card2 > #fotografia{
+  background-image: url(../img/fotografo.jpg);
+}
+
+#conteudo > #areasdeatuacao > #listcard1 > #card3 > #redacao{
+  background-image: url(../img/redacao.png);
+}
+
+#conteudo > #areasdeatuacao > #listcard2 {
+    height: 245px;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+#conteudo > #areasdeatuacao > #listcard2 > #card1,#card2,#card3{
+    float:left;
+    margin-left: 25px;
+}
+
+#conteudo > #areasdeatuacao > #listcard2 > #card1 > #DigitalMarkt{
+  background-image: url(../img/marketingDigital.jpg);
+}
+
+#conteudo > #areasdeatuacao > #listcard2 > #card2 > #EngenheiroSoftware{
+  background-image: url(../img/engSoft.jpg);
+}
+
+#conteudo > #areasdeatuacao > #listcard2 > #card3 > #Designer{
+  background-image: url(../img/designer.jpg);
+}
+
+/* Classes para card */
+.card{
+  width: 280px;
+  height: 240px;
+  background-color: white;
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 0px 0px 10px black;
+}
+
+.pop{
+    height: 150px;
+    background: rgb(255,255,255);
+    background: rgba(255,255,255,0.8);
+    display: none;
+    text-align:center;
+}
+
+.cardimg{
+    height: 150px;
+}
+
+.titcard{
+   color:black;
+   text-align: center;
+}
+
+.txtcard{
+  color: gray;
+  font-family: sans-serif;
+  font-weight: normal;
+  text-align: center;
+  font-size: 16px;
+}
+.btpop{
+	margin:0px auto;
+    margin-top: 50px;
+    padding:10px;
+    border-radius: 5px;
+    background-color: #c74735;
+    cursor:pointer;
+    color: white;
+    border: 2px solid #c74735;
+    transition: 1s;
+    font-size: 21px;
+    text-align:center;
+}
+
+.btpop:hover{
+    color:#c74735;
+    background: transparent;
+    transition: 1s;
+}
+
+.conteudohome{
+    background-color: #282B2d;
+}
+
+ /* Fim paginahome*/
+
+/*Inicio pagina planos*/
+.conteudoplanos{
+    background: url(../img/planos/O699PC0.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;
+}
+
+#conteudo > .textoplanos{
+    width: 800;
+    padding: 25px;
+    background: rgba(255,255,255,0.6);
+    font-size: 22px;
+    box-shadow: 0px 0px 5px #000;
+    color:black;
+    text-align: center;
+}
+
+#conteudo > #txtapresentacao{
+    margin-top: 50px;
+    height: 140px;
+}
+
+
+#conteudo > #txtregras{
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+ #cardplanos_1{
+    float:left;
+}
+
+ #cardplanos_2,#cardplanos_3{
+    float:left;
+    margin-left:40px;
+}
+
+.cards_planos{
+    height: 450px;
+    width: 1000px;
+    margin: 0px auto;
+    margin-top:20px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.card_planos{
+    width: 300px;
+    height: 380px;
+    box-shadow: 0px 0px 5px #000;
+    background: white;
+    opacity: 0.93;
+}
+
+.cardimg_planos>.valuecard{
+    font-size:55px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.cardimg_planos{
+    height:150px;
+    box-shadow: 0px 0px 5px #000;
+}
+
+.titcard_planos{
+    height: 40px;
+    background:  #c74735;
+    padding-top: 5px;
+}
+
+.titcard_planos > p{
+    font-weight: 350;
+    font-size: 24px;
+    text-align: center;
+    color:black;
+}
+
+.card_conteudo{
+    padding: 10px;
+}
+
+
+/*Fim da pagina planos*/
+
+/* Inicio conteudo cadvaga*/
+
+.conteudocadvaga{
+    background: url(../img/cadfreela/O6Q05S0.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;
+}
+
+.titvaga{
+    margin-left: 350px;
+    color:white;
+}
+
+
+#cadvaga{
+   height: 500px;
+   width: 860px;
+   margin: 0px auto;
+   margin-bottom: 80px;
+}
+
+/*Fim conteudo cadvaga*/
+
+/*Inicio conteudo cadempresas*/
+
+.conteudocadempresa{
+    background: url(../img/cadempresas/O6XN9V0.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;
+}
+
+#cadempresa {
+    padding: 10px;
+    height: 600px;
+    width: 565px;
+    margin: 0px auto; 
+    margin-bottom:150px;
+
+}
+
+/*Fim conteudo cadempresas*/
+
+/*Inicio conteudo cadfreela*/
+.conteudocadfreela{
+    background: url(../img/cadfreela/O6Q05S0.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;
+}
+
+#titulo-cad{
+	color:white;
+	text-align:center;
+}
+
+
+#form-cad{ 
+    width:700px;
+    margin: 0px auto;
+    margin-top:25px;
+    margin-bottom:100px;
+	 	
+}
+
+#divBotao{
+	text-align:center;
+}
+
+#form-cad>#divBotao>input[type="submit"]{
+   width: 100px;
+   height: 40px;
+   margin-top: 50px; 
+   font-size: 20px;
+   color:white;
+   border: 2px solid #c74735; 
+   background: #c74735;
+   border-radius: 5px; 
+   cursor: pointer;
+   transition: 1s;
+   text-align:center;
+}
+
+#form-cad > #divBotao> input[type="submit"]:hover{
+    background: transparent;
+    color:#c74735;
+    transition: 1s;
+}
+
+
+#form-cad> .form-group>input[type="text"],#form-cad>.form-group> input[type="number"],#form-cad> .form-group>input[type="password"]{
+	width:250px;
+	font-size:18px;
+	color:black;
+	margin-right:40px;
+	margin-bottom:30px;
+}
+
+#form-cad>.form-group> select{
+	width:300px;
+	font-size:18px;
+	color:black;
+	text-align:center;	
+	margin-right:40px;
+	margin-bottom:30px;
+}
+
+#form-cad>.form-group> textarea{
+	width:600px;
+	height:100px;
+	font-size:18px;
+	color:black;
+	
+}
+
+
+#form-cad> .form-group> label{
+	color:white;
+	font-size:26px;
+}
+
+
+/*Fim conteudo cadfreela*/
+
+/* Inicio pagina resultados*/
+.conteudoresultado{
+    background: url(../img/resultados/O6NM390.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;
+}
+
+#bgResultados{
+    width: 900px;
+    background: rgba(255,255,255,0.9);
+    margin: 0px auto;
+    box-shadow: 0px 0px 5px #000;
+    padding: 10px;
+    overflow: auto;
+}
+
+#bgResultados>h1{
+    text-align:center;
+}
+
+
+#anuncio{
+    margin-top: 20px;
+    overflow: auto;
+    padding: 10px;
+    border-top: solid 1px gray;
+}
+#anuncio > #divImagem{
+     width: 150px;
+     height: 120px;
+     float:left;
+}
+
+#anuncio > #divImagem > #imganuncio{
+     box-shadow: 0px 0px 5px #000;
+}
+
+#anuncio > #divImagem > #linkPerfil{
+    font-size: 20px;
+    text-align: center;
+}
+
+.linkAnuncio{
+    color:black;
+    text-decoration: none;
+    transition: 1s;
+}
+
+.linkAnuncio:hover{
+    color:#c74735;
+    transition: 1s;
+    text-decoration: none;
+}
+
+#anuncio > #conteudoAnuncio{
+    width: 700px;
+    margin-left: 10px;
+    float:left;
+}
+#anuncio > #conteudoAnuncio>h4{
+    float:left;
+    margin-top: 40px;
+}
+
+#anuncio > #conteudoAnuncio>#iconAval{
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/icons/estrela.png);
+    float:left;
+    margin-top: 40px;
+}
+
+#anuncio > #conteudoAnuncio>#linkTitulo{
+    font-size: 22px;
+    font-weight: bold;
+}
+/* Fim pagina resultados*/
+
+/*Inicio conteudo editar empresa*/
+.conteudoedDados{
+    background: url(../img/editar/O8CRTL0.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;
+}
+/*Fim conteudo editar empresa*/
+
+/*Inicio Pagina perfil*/
+.conteudoPerfil{
+    color:black;
+    background: white
+}
+
+.fotoPerfil{
+    width: 150px;
+    height: 150px; 
+    border: solid 1px black; 
+    margin-left: -75px;
+    left:50%;
+    margin-top:70px;
+    border-radius: 100%;
+    background: url(../img/designer.jpg);
+    z-index: 9;
+    position: absolute;
+    box-shadow: 0px 0px 5px black;
+}
+
+
+#divTextos{ 
+    overflow: auto; 
+    margin: 0px auto;
+    width: 100%; 
+    margin-top: 30px;
+    text-align:center;
+   
+}
+
+#divTextos>span{
+	 
+	margin-left:20px;
+}
+#txtNome{ 
+    margin-top: 50px;  
+}
+
+
+ #txtNome > h1,#txtNome > p{
+  text-align: center;
+}
+
+#txtAval{ 
+   overflow: auto;
+   width: 200px	;
+   float:left;          
+   font-size:16px;    
+}
+
+#textoDesc{ 
+    clear: both; 
+    width: 100%;  
+    margin:0px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 800px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px black;
+    border: solid 1px black; 
+}
+
+#ramo{
+    width: 800px; 
+}
+
+
+#ramo>h3{
+   margin-left: 15px;
+   margin-top: 10px;
+   margin-bottom: 5px;    
+}
+
+#ramo>p{
+   margin-left: 25px;
+}
+
+#vagasPerfilEmpresa{
+   margin-bottom: 50px;   
+    
+}
+
+#vagasPerfilEmpresa>h3{
+   margin-left: 15px;
+   margin-top: 10px;
+   margin-bottom: 5px;   
+    
+}
+
+#vagasPerfilEmpresa>h3>a{
+   text-decoration: none; 
+   color:black; 
+   transition: 1s;
+}
+
+#vagasPerfilEmpresa>h3>a:hover{
+   transition: 1s;
+   color:#c74735; 
+}
+
+
+#textoDesc>h2{  
+     padding:5px;
+     background: #c74735; 
+     border-bottom: solid 1px black;
+     padding-left: 10ox;
+}
+
+#textoDesc>p{ 
+    width: 800px;  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+ 
+
+.cardPerfil{ 
+    margin:0px auto;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 5px black;
+    border-top: solid 1px black;
+    padding-bottom: 15px;
+    width:800px;
+    border-radius: 5px;
+    border: solid 1px black;
+}
+
+.titPerfil{
+    background: #c74735;
+    border-bottom: solid 1px black;
+    padding-left: 10px;
+}
+
+.txtPerfil{ 
+    margin-left: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+ #txtAval>h4{ 
+    width: 150px;
+    float:left;
+}
+
+#fundoFoto{
+    width: 100%;
+    height: 180px;
+    background: #c74735;
+    position: relative; 
+    border: solid 1px black;
+    box-shadow: 0px 0px 5px black;
+}
+
+
+#txtMembro>h4,#txtMembro>p{
+     float:left;
+}
+
+
+#txtEmail{ 
+    width: 250px;    
+    float:left; 
+    margin-left: 30px;
+}
+
+#txtEmail>h4,#txtEmail>p{
+     float:left;
+     margin-left: 10px;
+}
+
+#txtTelefone{   
+    float:left;
+    overflow: auto;
+    margin-left: 30px;
+}
+
+#txtTelefone>h4,#txtTelefone>p{
+     float:left;
+}
+
+/*Fim Pagina perfil*/
+
+/* Mensagem alerta formularios */
+
+.divback > #msgalerta {
+    display: none;
+    width: 370px;
+    height: 30px;
+    margin: 0px auto;
+    margin-bottom: 10px;
+}
+
+.divback > #msgalerta > #alerta{
+    color: white;
+    text-shadow:0 0 10px rgba(0,0,0,1);
+    font-size: 20px;
+    width: 300px;
+    text-align: center;
+    float:left;
+}
+
+.divback > #msgalerta > #btok{
+   font-weight: normal;
+   font-size: 20px;
+   float:left;
+   cursor: pointer;
+   color: white;
+   transition: 1s;
+   text-shadow:0 0 10px rgba(0,0,0,1);
+    margin-left: 30px;
+}
+
+.divback > #msgalerta > #btok:hover{
+    color:#c74735;
+    transition: 1s;
+}
+
+/* Fim msg alerta cadfreela */
+
+/*Inicio conteudo minhas vagas*/
+
+.conteudovagas{
+    background-color: #737373;
+    background-size: cover;
+    overflow: auto;
+}
+
+#bgVagas{
+    width: 900px;
+    background: rgba(255,255,255,0.9);
+    margin: 0px auto;
+    box-shadow: 0px 0px 5px #000;
+    padding: 10px;
+    overflow: auto;
+}
+
+#bgVagas>h1{
+    text-align:center;
+}
+
+
+#anuncio{
+    margin-top: 20px;
+    overflow: auto;
+    padding: 10px;
+    border-top: solid 1px gray;
+}
+
+#anuncio > #conteudoAnuncio{
+    width: 700px;
+    margin-left: 10px;
+    float:left;
+}
+
+#anuncio > #conteudoAnuncio > #linkTitulo{
+    font-size: 26px;
+    font-weight: bold;
+    cursor: pointer;  
+}
+
+#anuncio > #conteudoAnuncio >  #textoDesc-minhasVagas{ 
+    clear:both;
+}
+
+#salvaga{
+    float: left;
+    overflow: auto;
+}
+
+.codvaga{
+    font-size: 14px;
+    float: right;
+    color: #737373;
+}
+
+#anuncio >#conteudoAnuncio> h5 { 
+  float:left;
+  width: 100px;
+   
+}
+
+
+.rating {
+	margin:0px auto;
+	width:195px;
+     
+}
+
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#ddd; 
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.rating > input:checked ~ label {
+    color: #f70;
+    text-shadow:1px 1px #c60, 2px 2px #940, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: gold;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+    color: #ea0;
+    text-shadow:1px 1px goldenrod, 2px 2px #B57340, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+
+/*Fim Css para div avaliação*/
+
+/*Inicio perfil vaga*/
+
+.conteudoPerfilVagas{
+    background: url(../img/vagas/vagas.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;   
+}
+
+#conteudoVaga{
+    width: 900px;
+    margin: 0px auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.8);
+    border-radius: 10px 10px 5px 5px;
+    box-shadow: 0px 0px 10px black;
+    padding: 20px;
+    overflow: auto;
+    
+}
+
+.tituloPerfVaga{
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.dadosVaga{
+    margin: 0px 20px 20px;
+    overflow: auto;
+  
+}
+
+.dadosVaga>h3{
+    float:left;
+}
+
+.dadosVaga>p{
+    float: left;
+    margin-left: 10px;
+    padding-top: 2px;
+}
+
+
+/*Fim perfil vaga*/
+
+/*Inicio erro login*/
+
+.conteudoErroLogin{
+    background: url(../img/cadfreela/O6Q05S0.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto; 
+    color:white;
+}
+
+#loginErro{
+	width:210px;
+	margin:0px auto;
+	margin-top:90px; 
+	text-align:center;	
+	margin-bottom:20px;
+}
+
+#loginErro>h2{
+	 margin-top:15px;
+}
+
+.conteudoErroLogin>.divback>#div-esqueceuSenha>h2{
+	text-align:center;
+	margin-bottom:10px;
+}
+
+#esqueceuSenha-txt{
+	text-align:center;
+	font-size:18px;
+	margin-top:10px;
+	cursor:pointer;
+	transition:1s;
+}
+
+#esqueceuSenha-txt:hover{
+	color:#c74735;
+	transition:1s;
+}
+
+
+.campos-LoginErro{
+	height:30px;
+	width:200px; 
+	margin:0px auto;
+	padding:5px;
+	border-radius:5px;
+	margin-bottom:20px;
+    font-size: 22px;
+}
+
+#div-esqueceuSenha{ 
+	display:none;
+	
+}
+
+#esqueceuSenha-Form{ 
+	width:210px;
+	margin:0px auto; 
+	margin-bottom:50px;
+	text-align:center;
+	
+}
+
+.bt-LoginErro{
+	width:80px;
+	height:35px;
+	border-radius:5px;
+	color:white;
+	font-size:18px;
+	background:#c74735;
+	margin:0px auto;
+	margin-top:15px;
+	display:inline-block;
+	transition:1s;
+	border:solid 2px #c74735;
+	cursor:pointer;
+}
+
+.bt-LoginErro:hover{
+	 color:#c74735;
+	 background:transparent;
+}
+
+/*Fim erro login*/
+
+
+/*Inicio perfil vaga*/
+
+.conteudoPerfilVagas{
+    background: url(../img/vagas/vagas.jpg) no-repeat center center fixed;
+    background-size: cover;
+    overflow: auto;  
+}
+
+#conteudoVaga{
+    width: 900px;
+    margin: 0px auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.8);
+    border-radius: 10px 10px 5px 5px;
+    box-shadow: 0px 0px 10px black;
+    padding: 20px;
+    overflow: auto;
+}
+
+.tituloPerfVaga{
+    text-align: center;
+    margin: 20px 0px;
+}
+
+.dadosVaga{
+    margin: 0px 20px 20px;
+    overflow: auto;
+}
+
+.dadosVaga>h3{
+    float:left;
+}
+
+.dadosVaga>p{
+    float: left;
+    margin-left: 10px;
+    padding-top: 2px;
+}
+
+#btmaisVagas{
+    cursor: pointer;
+    color: black;
+    font-size: 18px;
+    background:rgba(255,255,255,0.8);
+    width: 100px;
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 0px 10px 0px 0px;
+}
+
+
+
+#maisVagas{
+    margin: 0px auto;
+    background:rgba(255,255,255,0.8); 
+    padding: 20px;
+    display: none;
+    overflow: auto;
+    box-shadow: 0px 0px 10px black;
+}
+
+#linkVaga{
+    float: left;
+    overflow: auto;
+    width: 180px;
+    padding: 5px 15px 5px 5px;
+    border-right: solid 1px #737373;
+}
+
+#linkVaga>a:hover{
+    color: #c74735;
+    transition: 1s;
+}
+
+#linkVaga>a{
+    transition: 1s;
+    font-size: 15px;
+    float: left;
+    cursor: pointer;
+}
+
+#linkVaga>p{
+    margin: 3px 0px 0px 5px;
+    color: #737373;
+    font-size: 13px;
+    float: left;
+}
+
+/* Div editar vaga */
+
+#editVaga{
+     transition: 0.5s;
+    overflow: auto;
+    cursor: pointer;
+    float: right;
+}
+
+#editVaga:hover{
+    transition: 0.5s;
+    color: #c74735;
+}
+
+#editVaga:hover>#iconEditar{
+    transition: 0.5s;
+    background-image: url(../img/icons/edit2.png);
+}
+
+
+#editVaga>#iconEditar{
+     transition: 0.5s;
+    float: left;
+    width: 24px;
+    height: 23px;
+    background-image: url(../img/icons/edit.png);
+}
+
+#opcoes{
+    float: right;
+    width: 120px;
+    overflow: auto;
+}
+
+#editVaga>p{
+    float: left;
+    margin: 2px 0px 5px 5px;
+}
+
+#delVaga{
+    transition: 0.5s;
+    overflow: auto;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+}
+
+#delVaga:hover{
+    transition: 0.5s;
+    color: #c74735;
+}
+
+#delVaga:hover>#iconDel{
+    transition: 0.5s;
+    background-image: url(../img/icons/delete2.png);
+}
+
+#delVaga>#iconDel{
+    transition: 0.5s;
+    float: left;
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/icons/delete.png);
+}
+
+#delVaga>p{
+    float: left;
+    margin: 2px 0px 5px 5px;
+}
+
+/* Fim div editar vaga */
+
+
+
+/*Fim perfil vaga*/

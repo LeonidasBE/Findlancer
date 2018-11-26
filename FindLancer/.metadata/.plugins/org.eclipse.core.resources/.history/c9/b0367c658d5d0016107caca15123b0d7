@@ -1,0 +1,18 @@
+package br.com.findlancer.tests;
+
+import br.com.findlancer.entidades.Freelancers;
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	String data="09/08/2016";
+	String dataConvertida;
+	 
+	 String dia = data.substring(0, 2);
+	 String mes = data.substring(3, 5);
+	 String ano = data.substring(6);
+	 dataConvertida=ano+"-"+mes+"-"+dia;
+	 
+	 
+ }
+}

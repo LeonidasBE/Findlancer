@@ -1,0 +1,70 @@
+package br.com.findlancer.entidades;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.findlancer.sql.FreelancerDAO;
+
+/**
+ * Servlet implementation class FreelancerController
+ */
+@WebServlet("/freelacontroller.do")
+public class FreelancerController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+     
+    public FreelancerController() {
+        super();
+         
+    }
+ 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	
+	}
+ 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	String acao= request.getParameter("acao");
+		
+		if(acao.equals("cadfreelancer")){
+		 
+		    String nascimento=request.getParameter("nascimento");
+		    String categoria=request.getParameter("categoriaFreela");
+			String subcategoria=request.getParameter("subcategoriaFreela");
+			String formacao=request.getParameter("formacaoFreela");
+			String experiencia=request.getParameter("experienciaFreela");
+			String nome=request.getParameter("nomeFreela");
+			String telefone=request.getParameter("telefoneFreela");
+			String email=request.getParameter("emailFreela");
+			String senha=request.getParameter("senhaFreela");
+			String descricao=request.getParameter("descricaoFreela");
+		    String cidade=request.getParameter("cidadeFreela");
+		 
+		    Freelancers usuario1 = new Freelancers();
+		    usuario1.setNome(nome);
+		    usuario1.setSenha(senha);
+		    usuario1.setCategoria(categoria);
+		    usuario1.setCidade(cidade);
+		    usuario1.setDescricao(descricao);
+		    usuario1.setEmail(email);
+		    usuario1.setExperiencia(experiencia);
+		    usuario1.setFormacao(formacao);
+		    usuario1.setNascimento(nascimento);
+		    usuario1.setSubcategoria(subcategoria);
+		    usuario1.setTelefone(telefone);
+		    
+		    FreelancerDAO usuarioSQL = new FreelancerDAO();
+		    usuarioSQL.Cadastrar(usuario1); 
+		    
+		    RequestDispatcher forwardPage = request.getRequestDispatcher("index.jsp");
+		    forwardPage.forward(request, response);
+		}
+	}
+
+}

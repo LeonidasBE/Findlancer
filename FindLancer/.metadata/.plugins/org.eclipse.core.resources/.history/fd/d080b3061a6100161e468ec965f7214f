@@ -1,0 +1,12 @@
+package br.com.findlancer.tests;
+
+import br.com.findlancer.model.Enderecos;
+import br.com.findlancer.sql.EnderecosDAO;
+import br.com.findlancer.sql.LoginDAO;
+
+public class Testes {
+	
+ public static void main(String[] args) {
+	  
+ }
+}

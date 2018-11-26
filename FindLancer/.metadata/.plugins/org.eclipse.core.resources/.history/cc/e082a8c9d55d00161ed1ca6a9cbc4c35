@@ -1,0 +1,70 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ include file="topo.jsp" %>
+
+          <div id="conteudo" class="conteudoPerfil">
+              <div class="fotoPerfil"></div>  
+              <div id="fundoFoto">
+                    
+                  <div id="avaliarPerfil">
+                      <h4 id="titAvaliar">Avalie este perfil:</h4>
+                      <div id="imgAvaliar"></div>
+                 </div> 
+              </div>
+                  
+                  <div id="txtNome">
+                             <h1><% out.print(valida);%></h1>
+                        <p>Cidade,18</p>
+                  </div>    
+                   
+                  <div id="divTextos">
+                        <div id="txtAval">
+                             <h4>FeedBack:</h4>
+                            <div id="iconAval"></div>
+                         </div>
+              
+                        <div id="txtEmail">
+                           <h4>E-mail: </h4>
+                           <p> contato@exemplo.com</p>      
+                         </div>      
+                  
+                        <div id="txtMembro">
+                            <p>Membro desde <strong>Mai de 2016</strong></p>      
+                         </div>    
+                  
+                         <div id="txtTelefone">
+                             <h4>Contato:</h4>
+                             <p>(47)3328-6128</p>   
+                        </div>
+                  </div>
+                  <div id="textoDesc">
+                      <h2>Sobre Marcos</h2>
+                      <p>No menu Inserir, as galerias incluem itens que são projetados para corresponder à aparência geral do documento.
+                        Você pode usar essas galerias para inserir tabelas, cabeçalhos, rodapés, listas, folhas de rosto e outros
+                        blocos de construção do documento.
+                        Quando você cria imagens, gráficos ou diagramas, esses elementos também são coordenados com a aparência atual do documento.</p>
+                  </div>
+                
+                  <div id="formacao" class="cardPerfil">
+                      <h2 class="titPerfil">Formação de Marcos</h2>
+                        <p class="txtPerfil">- Ciência da computação - FURB</p>       
+                  </div>
+              
+                 <div id="categoriaPerfil" class="cardPerfil">
+                      <h2 class="titPerfil">Categoria profissional</h2>
+                        <p class="txtPerfil">- Desenvolvimento WEB </p>      
+                 </div>
+              
+                  <div id="subcategoriaPerfil" class="cardPerfil">
+                      <h2 class="titPerfil">Subcategoria profissional</h2>
+                        <p class="txtPerfil">- Desenvolvimento blabla </p>      
+                 </div>
+              
+                 <div id="experiencia" class="cardPerfil">
+                      <h2 class="titPerfil">Experiências profissionais</h2>
+                        <p class="txtPerfil">- Programador Java </p>      
+                 </div>
+                
+                 
+              
+          </div>
+<%@ include file="rodape.jsp" %>

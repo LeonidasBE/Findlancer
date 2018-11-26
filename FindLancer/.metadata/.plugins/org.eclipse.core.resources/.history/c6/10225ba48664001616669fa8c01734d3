@@ -1,0 +1,73 @@
+package br.com.findlancer.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import br.com.findlancer.model.Empresa;
+import br.com.findlancer.model.Endereco;
+import br.com.findlancer.sql.EmpresaDAO;
+
+ 
+@WebServlet("/empresacontroller.do")
+public class EmpresaController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    
+    public EmpresaController() {
+        super();
+
+    }
+
+	 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		 
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String acaoPost = request.getParameter("acao");  
+
+		//Condicional para verificar se é cadastrar empresa
+		if(acaoPost.equals("cadastrarempresa")){
+			
+			cadastrarEmpresa(request, response);
+		}
+		
+		
+	}
+
+	private void cadastrarEmpresa(HttpServletRequest request, HttpServletResponse response){
+		//Capturar os parametros do formulario
+		String nome = request.getParameter("nomeEmpresa");
+		String telefone = request.getParameter("telefoneEmpresa");
+		String email = request.getParameter("emailEmpresa");
+		String contato = request.getParameter("pessoaContato");
+		String descricao = request.getParameter("descricaoEmpresa");
+		String senha = request.getParameter("senhaEmpresa");
+		String ramo = request.getParameter("descricaoRamo");
+		int qtdFunc = Integer.parseInt(request.getParameter("nqtd"));
+		int fkEndereco = EnderecoController.cadastrarEndereco(request, response);
+		
+		//Instanciando novo objeto classe Empresa
+		Empresa empresa = new Empresa();
+		empresa.setEmail(email);
+		empresa.setNome(nome);
+		empresa.setTelefone(telefone);
+		empresa.setPessoaContato(contato);
+		empresa.setDescricao(descricao);
+		empresa.setRamoAtividade(ramo);
+		empresa.setQtdfuncionarios(qtdFunc);
+		empresa.setFkEndereco(fkEndereco);
+		
+		//Instanciando novo objeto EmpresaDao
+		EmpresaDAO empresaDao = new EmpresaDAO();
+		empresaDao.cadastrarEmpresa(empresa);
+		
+		//Chamando o metodo de controle de login para validar o login recem cadastrado
+	    LoginController.controlarLogin(request, response, email, senha);
+	}
+}

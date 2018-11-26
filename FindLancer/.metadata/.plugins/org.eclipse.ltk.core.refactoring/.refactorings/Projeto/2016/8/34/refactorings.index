@@ -1,0 +1,28 @@
+1471281267704	Delete element
+1471310471847	Rename type 'CategoriasDAO'
+1471310491472	Rename type 'CidadesDAO'
+1471310516781	Rename type 'EnderecosDAO'
+1471310528614	Rename type 'EstadosDAO'
+1471310540406	Rename type 'SubcategoriasDAO'
+1471310554991	Rename type 'Categorias'
+1471310561470	Rename type 'Cidades'
+1471310572197	Rename type 'Empresas'
+1471310584415	Rename type 'Enderecos'
+1471310593123	Rename type 'Estados'
+1471310605682	Rename type 'Freelancers'
+1471310612172	Rename type 'Subcategorias'
+1471310630551	Rename type 'CategoriasController'
+1471310639155	Rename type 'CidadesController'
+1471310646745	Rename type 'EstadosController'
+1471310653413	Rename type 'SubcategoriasController'
+1471372487077	Delete element
+1471402658387	Move 'inserirFoto.jsp' to 'WebContent'
+1471440053621	Delete element
+1471440061081	Delete element
+1471440068814	Delete element
+1471543660466	Delete element
+1471544362579	Delete element
+1471544492132	Delete element
+1471544692168	Delete element
+1471547161232	Move 'teste.jsp' to 'WebContent'
+1471611428578	Delete element

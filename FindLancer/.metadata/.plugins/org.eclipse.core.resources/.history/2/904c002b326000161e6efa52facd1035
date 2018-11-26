@@ -1,0 +1,46 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import br.com.findlancer.entidades.Categorias;
+import br.com.findlancer.entidades.Empresas;
+
+public class CategoriasDAO {
+
+	Connection conexaoDB= Conexao.conectar();
+	public List<Categorias> popularCategorias(){
+		
+		try {
+			//List categorias 
+			List<Categorias> listaCategorias = new ArrayList<Categorias>();
+			
+			//Comando realizando o select dos campos de categorias
+			String sql ="SELECT idCategoria,descricao FROM categorias" ;
+			
+			//Preparando o statament 
+			PreparedStatement stmt = conexaoDB.prepareStatement(sql);
+			//Result rs recebendo resultados da query
+			ResultSet rs =stmt.executeQuery();
+			
+			//While para capturar todos os valores resultados da query e armazenar no List<Categorias>
+			while(rs.next()){
+				Categorias categoria = new Categorias();
+				categoria.setIdCategoria(rs.getInt(1));
+				categoria.setDescricao(rs.getString(2));				
+			}
+			
+			System.out.println("Query categorias ok.");
+			
+		} catch (SQLException e) {
+			System.out.println("Query categorias erro.");
+
+		}
+		
+	}
+}
+

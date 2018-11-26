@@ -1,0 +1,75 @@
+package br.com.findlancer.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.google.gson.Gson;
+
+import br.com.findlancer.entidades.Subcategorias;
+import br.com.findlancer.sql.Conexao;
+import br.com.findlancer.sql.SubcategoriasDAO;
+
+/**
+ * Servlet implementation class AjaxController
+ */
+@WebServlet("/subcategoriascontroller.do")
+public class SubcategoriasController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SubcategoriasController() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		 
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		System.out.println("Entrou no post");
+		
+		//Recebe a fk da categoria atual
+		int fk = Integer.parseInt(request.getParameter("valor"));
+		
+		//Nova lista para armazenar subcategorias
+		ArrayList<Subcategorias> lista = new ArrayList<Subcategorias>();
+		
+		//Instanciando objeto SubcategoriasDAO para retornar a lista com o metodo popularSubcategorias
+		SubcategoriasDAO subcategoriasDAO = new SubcategoriasDAO();
+		
+		//Executando o metodo e armazenando na nova lista
+		lista = subcategoriasDAO.popularSubcategorias(fk);
+		
+		//Instanciando objeto da classe gson.google
+		Gson conversor = new Gson();
+		
+		//convertendo de arraylist para JSON
+		String json = conversor.toJson(lista);
+		
+		//Retornando lista para o ajax
+		PrintWriter leonidas = response.getWriter();
+		leonidas.println(json);
+	}
+
+}

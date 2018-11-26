@@ -1,0 +1,137 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
+
+public class LoginDAO {
+	
+	Connection conexaoDB = Conexao.conectar();
+	public static int nivel=0;
+	
+    public int logar(String email,String senha){
+    	int idUsuario = 0;
+    	String sqlFreela ="select idfree as id from freelancers where email = ? and senha = ?";
+		
+    	//Método para verificar o freelancer
+    	 idUsuario=logarSelect(sqlFreela, email, senha);
+    	
+    	 if(idUsuario==0){
+    		String sqlEmpresa="SELECT empresas.idEmpresa FROM empresas WHERE empresas.email =? and empresas.senha = ? ";
+    		idUsuario=logarSelect(sqlEmpresa, email, senha);
+    		nivel=2;
+    	 }else{
+    		nivel=1;
+    	}
+		
+		return idUsuario;
+    }
+	
+    
+    private int logarSelect(String sql,String email,String senha){
+    	int idUsuario=0;
+    	try {
+			PreparedStatement statement = conexaoDB.prepareStatement(sql);
+			statement.setString(1, email);
+			statement.setString(2, senha);
+			
+			ResultSet resultado = statement.executeQuery();
+			
+			if(resultado.next()){
+				idUsuario=resultado.getInt(1);
+			}
+			 
+			
+		} catch (SQLException e) {
+			
+		}
+    
+    	return idUsuario;
+    	
+    }
+    
+    public String retornaNomePeloId(int nivel,int id){
+    	String sql=null;
+    	
+    	if(nivel==1){
+    		sql="select nome from freelancers where idfree=?";
+    	}else if(nivel==2){    		
+    		sql="select nome from empresas where idEmpresa=?";
+    	}
+    	
+    	String nomeUsuario=null;
+    	JOptionPane.showMessageDialog(null, sql);
+    	try {
+			PreparedStatement statement = conexaoDB.prepareStatement(sql);
+			statement.setInt(1, id );
+			
+			ResultSet resultado = statement.executeQuery();
+			
+			while(resultado.next()){
+				nomeUsuario = resultado.getString(1);
+			}
+			
+			JOptionPane.showMessageDialog(null, "Consulta realizada");
+		} catch (SQLException e) {
+			
+			JOptionPane.showMessageDialog(null, "Consulta não realizada");
+				
+		}
+    	
+    	
+    	return nomeUsuario;
+    }
+	
+    public boolean autenticarEmail(String email){
+    	 int idUsuario = 0;
+    	 boolean email = false;
+    	 
+    	 try {
+    		 //Query para verificar primeiro na tabela de freelancers
+    		 String sql= "select idfree as id from freelancers where email = ?";
+        	 
+        	 idUsuario=verificarEmail(sql, email);
+        	 if(idUsuario==0){
+        		 sql= "select idEmpresa as id from empresas where email = ?";
+        		 idUsuario=verificarEmail(sql, email);
+        		 if(idUsuario!=0){
+        			email=true;
+        		 }
+        	 }else{
+        		 email=true;
+        	 }
+        	 
+    	 } catch (Exception e) {
+			 
+		}
+    	
+    	
+    }
+    
+    public int verificarEmail(String sql,String email){
+    	//Variavel que retorna resultado da consulta
+    	int idUsuario=0;
+    	
+    	//Try para tentar conectar e consultar
+    	try {
+			PreparedStatement stmt = conexaoDB.prepareStatement(sql);
+			//Armazena resultado no resultSet
+			ResultSet resultSet = stmt.executeQuery();
+			
+			//Verifica se o resultado query foi true
+			if(resultSet.next()){
+				idUsuario=resultSet.getInt(1);
+			}
+			
+			System.out.println("Consulta email realizada");
+		} catch (SQLException e) {
+			System.out.println("Consulta email erro");
+			 
+		}
+    	
+    	return idUsuario;
+    }
+}	

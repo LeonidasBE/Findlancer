@@ -1,0 +1,54 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import br.com.findlancer.model.Cidades;
+
+public class CidadeDAO {
+
+	Connection conexaoDB = Conexao.conectar();
+	
+	public ArrayList<Cidades> popularCidades(int fkestado){
+		//String para a query
+		String sql="select idCidade,nomeCidade from cidades where fk_estado=?";
+		ArrayList<Cidades> listaCidades = null;
+		
+		//Try para tentar executar a query
+		try {
+			//Preparar a query
+			PreparedStatement stmt = conexaoDB.prepareStatement(sql);
+			stmt.setInt(1, fkestado);
+
+			
+			//executar a query e armazenar em um ResultSet
+			ResultSet resultado = stmt.executeQuery();
+			
+			//Definir tipo da listaCidades
+			listaCidades= new ArrayList<Cidades>();
+			
+			//while para armazenar os resultado da query
+			while(resultado.next()){
+				//Instanciar objeto da classe cidades
+				Cidades cidade1 = new Cidades();
+				
+				//dando set nos atributos do objeto com os resultados da query
+				cidade1.setIdCidade(resultado.getInt(1));
+				cidade1.setNomeCidade(resultado.getString(2));
+				
+				//Armazenando objeto da classe cidade na lista de cidades
+				listaCidades.add(cidade1);
+			}
+			
+			System.out.println("Sucesso ao tentar selecionar cidades");
+		} catch (SQLException e) {
+			System.out.println("Erro ao tentar selecionar cidades");
+		}
+		
+		return listaCidades;
+	}
+	
+}

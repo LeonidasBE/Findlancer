@@ -1,0 +1,70 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@page import="br.com.findlancer.model.Freelancer"%> 
+<%@page import="java.util.ArrayList"%> 
+<%@page import="java.util.List"%> 
+<%@ include file="topo.jsp" %>
+
+          <div id="conteudo" class="conteudoPerfil">
+              <div class="fotoPerfil"></div>  
+              <div id="fundoFoto"></div>
+                  <% 
+                  	//Capturar usuario retornado pela sessao
+                  	 
+                  %>
+                  <div id="txtNome">
+                        <h1><%  %></h1>
+                        <p><%  %></p>
+                  </div>    
+                   
+                   <fieldset class="rating"> 
+                        <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Ótimo!"></label>
+                        <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Bom!"></label>
+                        <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Médio"></label>
+                        <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Ruim!"></label>
+                        <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Muito ruim!"></label>
+                     </fieldset>
+                   
+                  <div id="divTextos">
+                        <div id="txtAval">
+                             <h4>FeedBack Geral: 5</h4>
+                         </div>
+              
+                        <div id="txtEmail">
+                           <h4>E-mail: </h4>
+                           <p><% %></p>      
+                         </div>       
+                  
+                         <div id="txtTelefone">
+                             <h4>Contato:</h4>
+                             <p><% out.print(freelancer.getTelefone());%></p>   
+                        </div>
+                  </div>
+                  <div id="textoDesc">
+                      <h2>Sobre <% out.print(freelancer.getNome());%></h2>
+                      <p><% out.print(freelancer.getDescricao());%></p>
+                  </div>
+                
+                  <div id="formacao" class="cardPerfil">
+                      <h2 class="titPerfil">Formação de <% out.print(freelancer.getNome());%></h2>
+                        <p class="txtPerfil"><% out.print(freelancer.getFormacao());%></p>       
+                  </div>
+              
+                 <div id="categoriaPerfil" class="cardPerfil">
+                      <h2 class="titPerfil">Categoria profissional</h2>
+                        <p class="txtPerfil"><% %></p>      
+                 </div>
+              
+                  <div id="subcategoriaPerfil" class="cardPerfil">
+                      <h2 class="titPerfil">Subcategoria profissional</h2>
+                        <p class="txtPerfil"><% %></p>      
+                 </div>
+              
+                 <div id="experiencia" class="cardPerfil">
+                      <h2 class="titPerfil">Experiências profissionais</h2>
+                        <p class="txtPerfil"><% out.print(freelancer.getExperiencia());%></p>      
+                 </div>
+                
+                 
+              
+          </div>
+<%@ include file="rodape.jsp" %>

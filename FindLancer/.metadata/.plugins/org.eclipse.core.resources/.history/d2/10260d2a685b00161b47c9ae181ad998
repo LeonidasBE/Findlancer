@@ -1,0 +1,40 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.findlancer.entidades.Freelancers;
+
+public class FreelancerDAO {
+    
+	Connection conexaoDBUsuario = Conexao.conectar();
+	
+	public void Cadastrar(Freelancers freelancer){
+			try {
+				String sql = "insert into freelancers(nome,categoria,cidade,descricaoTrabalho,email,experiencia,formacao,nascimento,senha,subcategoria,telefone) "
+						+ "values(?,?,?,?,?,?,?,?,?,?,?)";
+				
+				PreparedStatement statement = conexaoDBUsuario.prepareStatement(sql);
+				statement.setString(1, freelancer.getNome());
+				statement.setString(2, freelancer.getCategoria());
+				statement.setString(3, freelancer.getCidade());
+				statement.setString(4, freelancer.getDescricao());
+				statement.setString(5, freelancer.getEmail());
+				statement.setString(6, freelancer.getExperiencia());
+				statement.setString(7, freelancer.getFormacao());
+				//statement.setDate(8, freelancer.getNascimento());
+				statement.setString(9, freelancer.getSenha());
+				statement.setString(10, freelancer.getSubcategoria());
+				statement.setString(11, freelancer.getTelefone());
+				
+				statement.execute();
+				statement.close();
+				
+				System.out.println("Cadastrado com sucesso");
+			} catch (SQLException e) {
+				System.out.println("Erro ao tentar cadastrar usuario");
+		}
+	}
+	
+}

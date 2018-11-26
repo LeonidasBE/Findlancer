@@ -1,0 +1,26 @@
+
+                   
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@page import="br.com.findlancer.model.Freelancer"%> 
+<%@page import="java.util.ArrayList"%> 
+<%@page import="java.util.List"%> 
+<%@ include file="topo.jsp" %>
+<style>
+	#fundoFoto>#inserir{
+		border:solid 1px red;
+		z-index:-1;
+		opacity: 0;
+   		position: absolute;
+   		z-index: -1;
+	}
+</style>
+          <div id="conteudo" class="conteudoPerfil">
+              <div class="fotoPerfil"></div>  
+              <div id="fundoFoto">
+        		<div for="inserir">Inserir</div>
+              	<input id="inserir" type="file" value="">
+              </div>
+                   
+          </div>
+<%@ include file="rodape.jsp" %>
+                  

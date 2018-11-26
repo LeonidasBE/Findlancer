@@ -1,0 +1,48 @@
+package br.com.findlancer.sql;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.findlancer.model.Empresa;
+
+public class EmpresaDAO {
+		
+	Connection conexaoDBUsuario = Conexao.conectar();
+	public void cadastrarEmpresa(Empresa empresa){
+		//String com o comando para insert no banco
+		String sql = "insert into empresas (nome,ramoAtividade,qtdfuncionarios,fk_endereco,telefone,pessoaContato, "
+				+ " descricao,email,senha) values (?,?,?,?,?,?,?,?,?) ";
+		//Tentar executar a insercao
+		try {
+			
+			//Preaparando o statement
+			PreparedStatement statement = conexaoDBUsuario.prepareStatement(sql);
+			statement.setString(1, empresa.getNome());
+			statement.setString(2, empresa.getRamoAtividade());
+			statement.setInt(3, empresa.getQtdfuncionarios());
+			statement.setInt(4, empresa.getFkEndereco());
+			statement.setString(5, empresa.getTelefone());
+			statement.setString(6, empresa.getPessoaContato());
+			statement.setString(7, empresa.getDescricao());
+			statement.setString(8, empresa.getEmail());
+			statement.setString(9, empresa.getSenha());
+			
+			statement.execute();
+			statement.close();
+			
+			System.out.println("Empresa cadastrada com sucesso");
+			
+		} catch (SQLException e) {
+			System.out.println("Erro ao tentar cadastrar usuario");
+		}
+		
+		//Metodo para buscar empresa por id
+		public Empresa buscaPorId(int id){
+			//String para guardar a query
+			String sql = "select e.nome,e.ramoAtividade,e.qtdfuncionarios,e.fk_endereco,e.telefone,e.pessoaContato,"
+					+ "e.descricao,e.email from empresas as e where idEmpresa= ? ";
+		}
+		
+	}
+}

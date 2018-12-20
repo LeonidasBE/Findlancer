@@ -1,79 +1,27 @@
-2016-08-09 15:54:53,248 [Worker-6] ERROR o.e.m.c.i.p.r.ProjectRegistryReader - Can't read workspace state
-java.io.StreamCorruptedException: invalid stream header: 00000000
-	at java.io.ObjectInputStream.readStreamHeader(Unknown Source) ~[na:1.8.0_101]
-	at java.io.ObjectInputStream.<init>(Unknown Source) ~[na:1.8.0_101]
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader$1.<init>(ProjectRegistryReader.java:67) ~[org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryReader.readWorkspaceState(ProjectRegistryReader.java:67) ~[org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
-	at org.eclipse.m2e.core.internal.project.registry.ProjectRegistryManager.<init>(ProjectRegistryManager.java:164) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
-	at org.eclipse.m2e.core.internal.MavenPluginActivator.start(MavenPluginActivator.java:211) [org.eclipse.m2e.core_1.7.0.20160603-1933.jar:na]
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:774) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.framework.BundleContextImpl$3.run(BundleContextImpl.java:1) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at java.security.AccessController.doPrivileged(Native Method) [na:1.8.0_101]
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:767) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:724) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:932) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:309) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.container.Module.doStart(Module.java:581) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.container.Module.start(Module.java:449) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:470) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:334) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:411) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:361) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:353) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at java.lang.ClassLoader.loadClass(Unknown Source) [na:1.8.0_101]
-	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:564) [org.eclipse.osgi_3.11.0.v20160603-1336.jar:na]
-	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174) [org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar:na]
-	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905) [org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar:na]
-	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243) [org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar:na]
-	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55) [org.eclipse.equinox.registry_3.6.100.v20160223-2218.jar:na]
-	at org.eclipse.core.internal.content.ContentType.getDescriber(ContentType.java:266) [org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar:na]
-	at org.eclipse.core.internal.content.ContentTypeCatalog.collectMatchingByContents(ContentTypeCatalog.java:195) [org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar:na]
-	at org.eclipse.core.internal.content.ContentTypeCatalog.internalFindContentTypesFor(ContentTypeCatalog.java:412) [org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar:na]
-	at org.eclipse.core.internal.content.ContentTypeCatalog.internalFindContentTypesFor(ContentTypeCatalog.java:461) [org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar:na]
-	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:357) [org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar:na]
-	at org.eclipse.core.internal.content.ContentTypeCatalog.getDescriptionFor(ContentTypeCatalog.java:371) [org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar:na]
-	at org.eclipse.core.internal.content.ContentTypeMatcher.getDescriptionFor(ContentTypeMatcher.java:76) [org.eclipse.core.contenttype_3.5.100.v20160418-1621.jar:na]
-	at org.eclipse.core.internal.resources.ContentDescriptionManager.readDescription(ContentDescriptionManager.java:453) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.resources.ContentDescriptionManager.getDescriptionFor(ContentDescriptionManager.java:363) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.resources.File.getContentDescription(File.java:263) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.wst.validation.internal.ContentTypeWrapper.getContentType(ContentTypeWrapper.java:36) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.internal.model.FilterRule$ContentType.matchesResource(FilterRule.java:522) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.internal.model.FilterGroup.shouldValidate(FilterGroup.java:181) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.Validator$V2.shouldValidate(Validator.java:1114) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.Validator.shouldValidate(Validator.java:320) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.Friend.shouldValidate(Friend.java:50) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:800) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.internal.ValManager.validate(ValManager.java:669) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.internal.ValBuilderJob$Visitor.visit(ValBuilderJob.java:299) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:120) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:84) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:129) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:94) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:52) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:117) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:105) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.wst.validation.internal.ValBuilderJob.fullBuild(ValBuilderJob.java:219) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:178) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126) [org.eclipse.wst.validation_1.2.700.v201508251749.jar:na]
-	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39) [org.eclipse.core.resources_3.11.0.v20160503-1608.jar:na]
-	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55) [org.eclipse.core.jobs_3.8.0.v20160509-0411.jar:na]
-2018-10-22 19:46:03,014 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2018-10-22 22:51:51,078 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2018-10-23 20:14:31,101 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
-2018-10-23 23:01:31,787 [Worker-7: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2018-10-30 19:25:17,658 [Worker-6: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
-2018-11-07 00:26:13,073 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
-2018-11-07 00:31:15,955 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-28 14:13:08,930 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-28 14:16:18,814 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-29 08:50:48,849 [Worker-1: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-29 10:51:40,885 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-11-29 11:38:57,594 [Worker-6: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-11-30 10:06:58,881 [Worker-2: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-03 09:32:28,380 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-03 11:30:21,327 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-03 14:07:01,828 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-03 14:31:19,489 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-04 10:12:56,711 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-04 13:29:01,745 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-10 08:51:57,914 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-10 10:01:48,998 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-10 10:38:24,037 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-10 11:56:14,002 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-11 10:59:05,084 [Worker-1: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-12-12 14:42:58,314 [Worker-7: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-12-14 08:41:43,163 [Worker-6: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-18 11:21:53,629 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-19 09:13:36,617 [Worker-0: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-19 10:11:03,200 [Worker-3: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-19 11:51:46,819 [Worker-5: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-19 13:30:39,587 [Worker-6: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-19 14:33:54,094 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-12-20 09:00:12,333 [Worker-7: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-12-20 09:26:13,846 [Worker-4: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

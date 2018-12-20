@@ -20,8 +20,7 @@ public class Conexao {
 			
 			//String com o caminho do banco com a case de dados
 			String url = "jdbc:mysql://localhost/findlancer";
-			conexaoDB = DriverManager.getConnection(url,"root",""); 
-			
+			conexaoDB = DriverManager.getConnection(url,"root","");
 			
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Erro ao conectar");
@@ -31,8 +30,7 @@ public class Conexao {
 			 JOptionPane.showMessageDialog(null, "Driver não encontrado");
 		}
 		return conexaoDB;
-		
+
 	}
 
-	 
 }

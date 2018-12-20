@@ -1,6 +1,0 @@
-package br.com.findlancer.model;
-
-public class Estados {
-	private int idEstado;
-	private String nomeEstado;
-}

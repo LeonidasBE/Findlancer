@@ -1,7 +1,5 @@
 $(document).ready(function(){
         
-	 
-		 
 		//Chamando o metodo para popular select de estados
 		popularEstados();
 		

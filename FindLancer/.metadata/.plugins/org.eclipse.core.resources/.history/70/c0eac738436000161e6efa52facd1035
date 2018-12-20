@@ -1,7 +1,0 @@
-package br.com.findlancer.entidades;
-
-public class Subcategorias {
-	private int idSub;
-	private int fkCat;
-	private String descricao;
-}

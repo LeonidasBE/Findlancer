@@ -5,8 +5,6 @@
 <%@ include file="topo.jsp" %>
  <% 
  
- 
- 	
  	Vaga vaga = (Vaga)session.getAttribute("Vaga");
  
 	int idLogado = (Integer)session.getAttribute("id");

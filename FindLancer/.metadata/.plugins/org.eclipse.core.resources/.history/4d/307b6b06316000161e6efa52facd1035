@@ -1,6 +1,0 @@
-package br.com.findlancer.entidades;
-
-public class Categorias {
-  private int idCategoria;
-  private String descricao;
-}

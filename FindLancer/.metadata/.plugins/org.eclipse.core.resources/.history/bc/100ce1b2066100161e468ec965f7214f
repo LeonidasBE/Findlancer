@@ -1,6 +1,0 @@
-package br.com.findlancer.sql;
-
-public class EstadosDAO {
-	
-	Connection conexaoDB= Conexao.conectar();
-}

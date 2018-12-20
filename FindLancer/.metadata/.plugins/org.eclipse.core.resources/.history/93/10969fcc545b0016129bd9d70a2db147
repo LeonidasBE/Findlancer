@@ -1,5 +1,0 @@
-package br.com.findlancer.entidades;
-
-public abstract class Usuarios {
-
-}

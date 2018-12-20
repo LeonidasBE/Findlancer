@@ -12,10 +12,10 @@ public class LoginDAO {
     public int logar(String email,String senha){
     	int idUsuario = 0;
     	String sqlFreela ="select idFreelancer as id from freelancers where email = ? and senha = ?";
-		
+
     	//M�todo para verificar o freelancer
     	 idUsuario=logarSelect(sqlFreela, email, senha);
-    	
+
     	 if(idUsuario==0){
     		String sqlEmpresa="SELECT empresas.idEmpresa FROM empresas WHERE empresas.email =? and empresas.senha = ? ";
     		idUsuario=logarSelect(sqlEmpresa, email, senha);
@@ -23,10 +23,8 @@ public class LoginDAO {
     	 }else{
     		nivel=1;
     	}
-		
 		return idUsuario;
     }
-	
     
     private int logarSelect(String sql,String email,String senha){
     	int idUsuario=0;
@@ -45,9 +43,7 @@ public class LoginDAO {
 		} catch (SQLException e) {
 			
 		}
-    
     	return idUsuario;
-    	
     }
     
     public String retornaNomePeloId(int nivel,int id){

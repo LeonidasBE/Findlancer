@@ -81,11 +81,11 @@
      text-decoration: none;
 }
 
-/*Defini as bordas laterais*/
+/*Define as bordas laterais*/
 #topo > #menu > ul > #l4{
       border-right:solid 0.5px white;
 }
-/*Defini bordas laterais*/
+/*Define bordas laterais*/
 #topo > #menu > ul > #l1{
       border-left:solid 0.5px white;
 }

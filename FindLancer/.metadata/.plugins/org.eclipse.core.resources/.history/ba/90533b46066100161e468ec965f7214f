@@ -1,7 +1,0 @@
-package br.com.findlancer.model;
-
-public class Cidades {
-	private int idCidade;
-	private int fk_estado;
-	private int nomeCidade;
-}
